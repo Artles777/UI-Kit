@@ -1,4 +1,4 @@
-extends __index
+extends _index
 
 block meta
     meta(charset='utf-8')
@@ -15,15 +15,15 @@ block title
     title #{htmlWebpackPlugin.options.title}
 
 block headers & footers
-
+    include includes/Headers & Footers
 
 block cards
-    h1 Какой-то контент
-    div
-        img(src=require('../../img/D0Q0VM0X4AAhf6o.jpg'))
+    include includes/Cards
 
 block form elements
+    include includes/Form elements
 
 block colors & type
+    include includes/Colors & Type
 
 

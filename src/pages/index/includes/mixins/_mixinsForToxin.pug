@@ -1,0 +1,14 @@
+mixin Menu(...items)
+    ul.navbar__menu
+        each list in items.length ? items : ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation']
+            li.navbar__item(style={display: 'inline'}): a.navbar__link(href=`/${list}`)= list
+
+mixin StandardNavBar(...items)
+    .menu(style={'display': 'flex', 'align-items': 'center'})
+        .logo
+            img.logo__img(src=require('../../img/Logo.svg'))
+        .navbar
+            +Menu(...items)
+        .navbar__btn
+            btn.navbar__btn.navbar__btn_login LOGIN
+            btn.navbar__btn.navbar__btn_register REGISTER
