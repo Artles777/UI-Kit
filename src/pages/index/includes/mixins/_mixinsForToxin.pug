@@ -1,14 +1,124 @@
-mixin Menu(...items)
-    ul.navbar__menu
-        each list in items.length ? items : ['Home', 'About Us', 'Services', 'Careers', 'News', 'Documentation']
-            li.navbar__item(style={display: 'inline'}): a.navbar__link(href=`/${list}`)= list
+style.
+    .navbar__btn_login:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -2px;
+        border-radius: inherit;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+    .navbar__item {
+        padding-left: 28px;
+    }
+    .navbar__item:not(:first-child) {
+        letter-spacing: 0.08em;
+    }
+    .navbar__item:nth-child(3) {
+        padding-left: 26px;
+    }
+    .navbar__item:nth-child(4) {
+        padding-left: 23px;
+    }
+    .navbar__item:nth-child(5) {
+        padding-left: 29px;
+    }
+    .navbar__item:nth-child(6) {
+        padding-left: 29px;
+    }
 
-mixin StandardNavBar(...items)
-    .menu(style={'display': 'flex', 'align-items': 'center'})
-        .logo
+mixin Menu(...items)
+    ul.navbar__menu(style={'display': 'flex', 'justify-content': 'flex-end'})
+        each list, index in items.length ? items : ['Home','About Us', 'Services', 'Careers', 'News', 'Documentation']
+            if index === 0
+                li.navbar__item(style={display: 'inline',
+                    'padding-left': '0px',
+                    'font-size': '14px'})
+                    a.navbar_link(href=`/${list}`, class="active", style={
+                        'text-decoration': 'none',
+                        'color': 'rgba(31, 32, 65, 0.75)',
+                        'font-size': '14px'})= list
+            else if index === 2
+                li.navbar__item(style={display: 'inline',
+                    'font-size': '14px'})
+                    a.navbar__link(href=`/${list}`, style={
+                        'text-decoration': 'none',
+                        'color': 'rgba(31, 32, 65, 0.5)',
+                        'font-size': '14px'})= list
+                    span.icon-down-open(style={
+                        'text-decoration': 'none',
+                        'display': 'inline',
+                        'color': 'rgba(31, 32, 65, 0.5)'})
+            else
+                li.navbar__item(style={display: 'inline',
+                    'font-size': '14px'})
+                    a.navbar__link(href=`/${list}`, style={
+                        'text-decoration': 'none',
+                        'color': 'rgba(31, 32, 65, 0.5)',
+                        'font-size': '14px'})= list
+
+mixin StandardNavBar(surname, ...items)
+    .menu(style={'display': 'flex',
+        'align-items': 'center',
+        'justify-content': 'space-between',
+        'height': '70px',
+        'position': 'relative',
+        'width': '100%',
+        'padding-right': '20px',
+        'padding-left': '20px'})
+        .logo(style={'flex': '0 0 16.66667%', 'max-width': '16.66667%'})
             img.logo__img(src=require('../../img/Logo.svg'))
-        .navbar
+        .navbar(style={'margin-left': '16.66667%',
+            'position': 'relative',
+            'width': '100%',
+            'padding-right': '33px',
+            'padding-left': '17px'})
             +Menu(...items)
-        .navbar__btn
-            btn.navbar__btn.navbar__btn_login LOGIN
-            btn.navbar__btn.navbar__btn_register REGISTER
+        if surname
+            .navbar__authorized(style={'flex': '0 0 auto',
+                'width': 'auto',
+                'max-width': '100%',
+                'display': 'flex',
+                'align-items': 'center'})
+                span.spacer(style={'width': '1px',
+                    'height': '30px',
+                'background': 'rgba(31, 32, 65, 0.1)'})
+                p.navbar__authorized.navbar__authorized_name(style={
+                    'margin': '0',
+                    'padding-left': '30px',
+                    'font-family': 'Montserrat',
+                    'font-size': '14px',
+                    'color': 'rgba(31, 32, 65, 0.5)'
+                    })= `${surname}`
+        else
+            .navbar__btn(style={'flex': '0 0 auto',
+                'width': 'auto',
+                'max-width': '100%',
+                'font-family': 'Montserrat',
+                'font-style': 'normal',
+                'font-weight': 'bold',
+                'font-size': '12px',
+                'display': 'inline'
+            })
+                btn.navbar__btn.navbar__btn_login(style={'align-items': 'center',
+                    'width': '79px',
+                    'height': '34px',
+                    'z-index': '100000',
+                    'position': 'relative',
+                    'box-sizing': 'border-box',
+                    'color': '#BC9CFF',
+                    'background': '#FFFFFF',
+                    'background-clip': 'padding-box',
+                    'border-radius': '22px',
+                    'padding': '8px 17px',
+                    'border-radius': '22px'}) LOGIN
+                btn.navbar__btn.navbar__btn_register(style={'margin-left': '17px',
+                    'width': '101px',
+                    'height': '34px',
+                    'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
+                    'color': '#FFFFFF',
+                    'padding': '10px 20px',
+                    'border-radius': '22px'}) REGISTER

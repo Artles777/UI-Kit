@@ -1,5 +1,11 @@
 include mixins/_mixinsForToxin
 
+.emblem(style={"position": "relative", "left": "30px", "top": "30px"})
+    img.emblem__img(src=require('../../img/Emblem.svg'))
 header.header
     .container: .row
         +StandardNavBar()
+
+header.header
+    .container: .row
+        +StandardNavBar('Cosmin Negoita')
