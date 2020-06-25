@@ -1,0 +1,29 @@
+mixin Menu(...items)
+    ul.navbar__menu
+        each list, index in items.length ? items : ['Home','About Us', 'Services', 'Careers', 'News', 'Documentation']
+            if index === 0
+                li.navbar__item
+                    a.navbar__link(href=`/${list}`, class="active")= list
+            else if index === 2
+                li.navbar__item
+                    a.navbar__link(href=`/${list}`)= list
+                    span.icon-down-open(style={
+                        })
+            else
+                li.navbar__item
+                    a.navbar__link(href=`/${list}`)= list
+
+mixin StandardNavBar(surname, ...items)
+    .menu
+        .logo
+            img.logo__img(src=require('../../img/Logo.svg'))
+        .navbar
+            +Menu(...items)
+        if surname
+            .navbar__authorized
+                span.navbar__authorized.navbar__authorized_spacer
+                p.navbar__authorized.navbar__authorized_name= `${surname}`
+        else
+            .navbar__btn
+                btn.navbar__btn.navbar__btn_login LOGIN
+                btn.navbar__btn.navbar__btn_register REGISTER
