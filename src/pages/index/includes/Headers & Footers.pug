@@ -1,16 +1,16 @@
 include mixins/_header
+include mixins/_footer
 
-
-.emblem(style={"position": "relative", "left": "30px", "top": "30px"})
+.emblem(style={"position": "absolute", "left": "30px", "top": "30px"})
     img.emblem__img(src=require('../../img/Emblem.svg'))
 header.header
-    .container: .row
-        +StandardNavBar()
+    +StandardNavBar()
 
 header.header
-    .container: .row
-        +StandardNavBar('Cosmin Negoita')
+    +StandardNavBar('Cosmin Negoita')
 
 footer.footer
-    .container: .row
+    +FooterAndCopybar('Copyright © 2018 Toxin UI Kit. All rights reserved.')
 
+footer.footer
+    +FooterAndCopybar()

@@ -14,16 +14,18 @@ mixin Menu(...items)
                     a.navbar__link(href=`/${list}`)= list
 
 mixin StandardNavBar(surname, ...items)
-    .menu
-        .logo
-            img.logo__img(src=require('../../img/Logo.svg'))
-        .navbar
-            +Menu(...items)
-        if surname
-            .navbar__authorized
-                span.navbar__authorized.navbar__authorized_spacer
-                p.navbar__authorized.navbar__authorized_name= `${surname}`
-        else
-            .navbar__btn
-                btn.navbar__btn.navbar__btn_login LOGIN
-                btn.navbar__btn.navbar__btn_register REGISTER
+    .container: .row
+        .menu
+            .logo
+                img.logo__img(src=require('../../img/Logo.svg'))
+            .navbar
+                +Menu(...items)
+            if surname
+                .navbar__authorized
+                    span.navbar__authorized__spacer
+                    p.navbar__authorized__name= `${surname}`
+            else
+                .navbar__btn
+                    btn.navbar__btn.navbar__btn__login LOGIN
+                    btn.navbar__btn.navbar__btn__register REGISTER
+

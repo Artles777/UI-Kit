@@ -1,10 +1,13 @@
-@import "mixins/custom";
+@import "components/custom";
 @import "~bootstrap/scss/bootstrap-reboot";
 @import "components/font-face";
 @import "components/animation";
+@import "components/header";
+@import "components/footer";
 
 body {
   background-color: #F4F4F6;
+  font-family: Montserrat;
 }
 
 ul {
@@ -12,18 +15,63 @@ ul {
   padding: 0;
 }
 
+p, a, input, li {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  color: rgba(31, 32, 65, 0.75);;
+}
+
+a {
+  color: rgba(31, 32, 65, 0.5);
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(31, 32, 65, 0.5);
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+}
+
+h4 {
+  color: #1F2041;
+}
+
 .active {
   font-family: Montserrat;
   font-weight: 600;
+  color: rgba(31, 32, 65, 0.75);
+
+  &:hover {
+    color: rgba(31, 32, 65, 0.75);
+  }
 }
 
 .header {
-  margin-top: 100px;
+  margin-top: 148px;
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &:not(:first-of-type) {
     margin-top: 40px;
+  }
+}
+
+.footer {
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  margin-top: 40px;
+
+  &:last-of-type {
+    margin-bottom: 130px;
   }
 }
 
@@ -36,135 +84,4 @@ ul {
   @include make-row();
 }
 
-.menu {
-  @include make-col-ready();
 
-
-  display: flex;
-  align-items: center;
-  height: 70px;
-}
-
-.logo {
-  @include make-col(2);
-
-  &__img {
-
-  }
-}
-
-.navbar {
-  @include make-col-offset(2);
-  @include make-col-ready(32px);
-
-  padding-right: 33px;
-
-  &__menu {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &__item {
-    display: inline;
-    padding-left: 28px;
-    font-size: 14px;
-
-    &:not(:first-child) {
-      letter-spacing: 0.08em;
-    }
-
-    &:first-child {
-      padding-left: 0;
-    }
-
-    &:nth-child(4) {
-      padding-left: 22px;
-    }
-    &:nth-child(6) {
-      padding-left: 29px;
-    }
-  }
-
-  &__link {
-    color: rgba(31, 32, 65, 0.5);
-    font-size: 14px;
-    text-decoration: none;
-    display: inline;
-
-    &:first-child {
-      color: rgba(31, 32, 65, 0.75);
-    }
-
-    &:hover {
-      text-decoration: none;
-    }
-  }
-}
-
-.icon-down-open {
-  color: rgba(31, 32, 65, 0.75);
-}
-
-.navbar__btn {
-  @include make-col-auto;
-
-  border-radius: 22px;
-  font-family: Montserrat;
-  font-weight: bold;
-  font-size: 12px;
-  display: inline;
-
-  &_login {
-    $border: 2px;
-    align-items: center;
-    width: 79px;
-    height: 34px;
-    z-index: 100000;
-    position: relative;
-    box-sizing: border-box;
-    color: #BC9CFF;
-    background: #FFFFFF;
-    background-clip: padding-box;
-    //border: solid $border transparent;
-    border-radius: 22px;
-    padding: 8px 17px;
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: -$border;
-      border-radius: inherit;
-      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    }
-    }
-  &_register {
-    width: 101px;
-    height: 34px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: #FFFFFF;
-    padding: 10px 20px;
-    margin-left: 18px;
-  }
-}
-
-
-.navbar__authorized {
-  @include make-col-auto;
-
-  display: flex;
-
-  &_name {
-    margin: 0;
-    padding-left: 30px;
-    font-family: Montserrat;
-    font-size: 14px;
-    color: rgba(31, 32, 65, 0.5);
-    align-items: center;
-  }
-  &_spacer {
-    width: 1px;
-    height: 30px;
-    background: rgba(31, 32, 65, 0.1);
-  }
-}

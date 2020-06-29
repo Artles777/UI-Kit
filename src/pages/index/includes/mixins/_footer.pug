@@ -1,0 +1,72 @@
+mixin List(...items)
+    .navigation
+        ul.verticalBar
+            each list, index in items
+                if index === 0
+                    li.verticalBar__item
+                        a.verticalBar__title(href={})= list
+                else
+                    li.verticalBar__item
+                        a.verticalBar__link(href={})= list
+
+mixin CopyrightBar(copyText, ...icon)
+    .copyrightBar__wrapper
+        p.copyrightBar__text= copyText
+        .socialIcon
+            each listItem in icon.length ? icon : ['icon-twitter', 'icon-facebook-squared', 'icon-instagram']
+                span.socialIcon__item
+                    a.socialIcon__link(href={}, class=`${listItem}`)
+
+mixin FooterAndCopybar(copyText, ...icon)
+    if copyText
+        .container: .row
+            .widgets
+                .logo
+                    img.logo__img(src=require('../../img/Logo.svg'))
+                    p.logo__text.
+                        Lorem ipsum dolor sit amet
+                        onsectetur adipiscing elit aliquam
+                        eget nullam pellentesque aliquam
+                        curabitur cociis.
+                +List('Navigation',
+                    'About Us',
+                    'News',
+                    'Support',
+                    'Products')
+                +List('About Us',
+                    'Who we are',
+                    'Our team',
+                    'Careers',
+                    'Investors')
+                +List('Support',
+                    'Documentation',
+                    'Community',
+                    'Get in Touch')
+                form.subscribe
+                    h4.subscribe__title Subscribe to our newsletter
+                    p.subscribe__text.
+                        Receive our latest news and
+                        promotions in your inbox!
+                    .subscribe__wrapper
+                        input.subscribe__input(placeholder='Your email address')
+                        btn.subscribe__btn(class='icon-right')
+        .copyrightBar
+            .container: .row
+                +CopyrightBar(copyText, ...icon)
+    else
+        .container: .row
+            .widgets(style={'padding-bottom':'24px'})
+                .logo.img-fluid
+                    img.logo__img(src=require('../../img/Logo.svg'))
+                    p.logo__text(style={'letter-spacing':'0.01em'}).
+                        Lorem ipsum dolor sit amet
+                        onsectetur adipiscing elit aliquam
+                        eget nullam
+                    p.logo__text(style={'padding-top':'0', 'letter-spacing':'0.01em'}).
+                        pellentesque aliquam
+                        curabitur cociis.
+            .copyrightBar(style={'border':'none', 'justify-content': 'center', 'height':'auto', 'padding-bottom':'104px'})
+                .socialIcon
+                    each listItem in icon.length ? icon : ['icon-twitter', 'icon-facebook-squared', 'icon-instagram']
+                        span.socialIcon__item(style={'padding-left': '5px', 'padding-right': '5px'})
+                            a.socialIcon__link(href={}, style={'letter-spacing':'0em'}, class=`${listItem}`)

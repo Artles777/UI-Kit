@@ -1,0 +1,128 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+
+.menu {
+  @include make-col(12);
+
+  display: flex;
+  align-items: center;
+  height: 70px;
+}
+
+.logo {
+  @include make-col-ready();
+  @include make-col(3);
+
+  &__img {
+
+  }
+}
+
+.navbar {
+  @include make-col-offset(1);
+  @include make-col-ready();
+  @include make-col-auto;
+
+  &__menu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__item {
+    display: inline;
+    padding-left: 30px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:nth-child(4) {
+      padding-left: 21px;
+    }
+  }
+
+  &__link {
+    display: inline;
+  }
+}
+
+.icon-down-open {
+  color: rgba(31, 32, 65, 0.5);
+}
+
+.navbar__btn {
+  @include make-col-ready();
+  @include make-col-auto;
+
+  border-radius: 22px;
+  font-family: Montserrat;
+  font-weight: bold;
+  font-size: 12px;
+  display: inline;
+  padding-left: 8px;
+
+  &__login {
+    $border: 2px;
+    align-items: center;
+    width: 79px;
+    height: 34px;
+    z-index: 100000;
+    position: relative;
+    box-sizing: border-box;
+    color: #BC9CFF;
+    background: #FFFFFF;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 22px;
+    padding: 8px 17px;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -$border;
+      border-radius: inherit;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+  }
+  &__register {
+    width: 101px;
+    height: 34px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: #FFFFFF;
+    padding: 10px 20px;
+    margin-left: 18px;
+  }
+}
+
+@if(class="navbar__authorized") {
+  .menu {
+    display: inline-flex;
+    justify-content: space-between;
+  }
+  .navbar {
+    flex-grow: 1;
+  }
+}
+
+.navbar__authorized {
+  @include make-col-ready();
+  @include make-col-auto;
+
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+
+  &__spacer {
+    width: 1px;
+    height: 30px;
+    background: rgba(31, 32, 65, 0.1);
+  }
+
+  &__name {
+    margin: 0;
+    padding-left: 30px;
+    font-family: Montserrat;
+    font-size: 14px;
+    color: rgba(31, 32, 65, 0.5);
+  }
+}

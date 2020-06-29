@@ -1,0 +1,159 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+
+.widgets {
+  @include make-col(12);
+
+  display: flex;
+  padding-top: 100px;
+  padding-bottom: 99px;
+}
+
+.logo {
+  @include make-col-ready();
+  @include make-col(3);
+
+  &__img {
+
+  }
+
+  &__text {
+    padding-top: 18px;
+    line-height: 1.7em;
+    color: rgba(31, 32, 65, 0.75);
+  }
+}
+
+.img-fluid {
+  @include make-col-ready();
+  @include make-col(12);
+
+  flex: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //& .logo__img {
+  //
+  //}
+  //
+  //& .logo__text {
+  //  @include make-col(6);
+  //
+  //  text-align: center;
+  //  letter-spacing: 0.01em;
+  //}
+}
+
+.navigation {
+  @include make-col-ready();
+  @include make-col(2);
+
+  .verticalBar {
+
+    &__item {
+      display: block;
+      padding-top: 17px;
+
+      &:first-child {
+        padding: 0;
+      }
+    }
+
+    &__link {
+
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: #1F2041;
+      font-size: 12px;
+    }
+  }
+}
+
+.subscribe {
+  @include make-col(3);
+  @include make-col-ready();
+
+  &__title {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1.7em;
+    letter-spacing: -0.03em;
+    color: #1F2041;
+    padding-bottom: 20px;
+  }
+
+  &__text {
+    letter-spacing: -0.01em;
+    padding-bottom: 24px;
+  }
+
+  &__wrapper {
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &__input {
+    border: none;
+  }
+
+  &__btn {
+    padding-left: 30px;
+  }
+}
+
+.icon-right {
+  background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  font-size: 18px;
+}
+
+.copyrightBar {
+  @include make-col-ready();
+
+  border-top: 1px solid rgba(31, 32, 65, 0.1);
+  height: 70px;
+  display: flex;
+  align-items: center;
+
+  &__wrapper {
+    @include make-col-ready();
+    @include make-col(12);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    letter-spacing: -0.01em;
+  }
+}
+
+.socialIcon {
+
+  &__item {
+    padding-left: 10px;
+    flex-direction: row;
+  }
+
+  &__link {
+    font-size: 24px;
+    letter-spacing: -0.3em;
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
