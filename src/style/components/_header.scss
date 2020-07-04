@@ -1,4 +1,4 @@
-@import "../../../node_modules/bootstrap/scss/bootstrap-reboot";
+@import "~bootstrap/scss/bootstrap-reboot";
 
 .menu {
   @include make-col(12);
@@ -45,9 +45,7 @@
   }
 }
 
-.icon-down-open {
-  color: rgba(31, 32, 65, 0.5);
-}
+
 
 .navbar__btn {
   @include make-col-ready();

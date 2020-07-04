@@ -15,9 +15,13 @@ block title
     title #{htmlWebpackPlugin.options.title}
 
 block headers & footers
+    .emblem(style={"position": "absolute", "left": "30px", "top": "30px"})
+        img.emblem__img(src=require('../../img/Emblem.svg'))
     include includes/Headers & Footers
 
 block cards
+    .emblem(style={"position": "relative", "left": "30px", "top": "30px"})
+        img.emblem__img(src=require('../../img/Emblem.svg'))
     include includes/Cards
 
 block form elements

@@ -1,0 +1,30 @@
+mixin Calendar()
+    .container: .row
+        .cards
+            .card.card
+                form.card__form
+                    h3.card__title Найдём номера под ваши пожелания
+                    .card__wrapper
+                        .card__columns
+                            label.card__label прибытие
+                            .card__wrapper_input
+                                input.card__date(placeholder='ДД.ММ.ГГГГ')
+                                span.card__icon.icon-down-open
+                        .card__columns
+                            label.card__label выезд
+                            .card__wrapper_input
+                                input.card__date(placeholder='ДД.ММ.ГГГГ')
+                                span.card__icon.icon-down-open
+                    .card__wrapper
+                        label.card__label гости
+                        .card__wrapper_input
+                            select.card__date
+                                option.card__date_namber(disabled, selected, hidden, value='guests') Сколько гостей
+                                - var n = 1
+                                while n < 6
+                                    option.card__date_namber= n++
+                            span.card__icon.icon-down-open
+                    .card__btn
+                        btn.card__btn_default подобрать номер
+                        span.card__btn_icon.icon-right
+
