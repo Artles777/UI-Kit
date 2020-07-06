@@ -1,0 +1,9 @@
+mixin ColorName(color, title, opacity)
+    .colors__wrapper
+        .colors__square(style={
+            'background':`${color}`,
+            'opacity':`${opacity}`
+        })
+        p.colors__desc
+            span.colors__title= `${title} ${opacity}`
+            span.colors__subtitle= color

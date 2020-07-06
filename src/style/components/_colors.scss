@@ -1,0 +1,35 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+
+.colors {
+  @include make-col-ready();
+  @include make-col(4);
+
+  &__wrapper {
+    display: flex;
+    padding-bottom: 20px;
+  }
+
+  &__square {
+    @include size(70px);
+
+    border-radius: 6px;
+    margin-left: 10px;
+  }
+
+  &__desc {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: Quicksand;
+    font-size: 19px;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+  }
+}

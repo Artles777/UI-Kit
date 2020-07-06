@@ -1,0 +1,19 @@
+include mixins/_colors
+include mixins/_type
+
+-
+    var ArrayColorName = [
+        {color:'#1F2041', title:'Dark Shade', opacity:'100%'},
+        {color:'#1F2041', title:'Dark Shade', opacity:'75%'},
+        {color:'#1F2041', title:'Dark Shade', opacity:'50%'},
+        {color:'#1F2041', title:'Dark Shade', opacity:'25%'},
+        {color:'#1F2041', title:'Dark Shade', opacity:'5%'},
+        {color:'#BC9CFF', title:'Purple'},
+        {color:'#6FCF97', title:'Green'}
+        ]
+
+.main: .container: .row
+    .colors
+        each ColorName in ArrayColorName
+            +ColorName(ColorName.color, ColorName.title, ColorName.opacity)
+

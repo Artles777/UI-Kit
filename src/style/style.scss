@@ -5,10 +5,14 @@
 @import "components/header";
 @import "components/footer";
 @import "components/cards";
+@import "components/colors";
 
 body {
-  background-color: #F4F4F6;
   font-family: Montserrat;
+}
+
+.app-wrapper {
+  background-color: #FFFFFF;
 }
 
 ul {
@@ -107,6 +111,18 @@ label {
   @include make-grid-columns();
 }
 
-.icon-down-open {
+[icon-] {
   color: rgba(31, 32, 65, 0.5);
+}
+
+.emblem {
+  padding: 30px 0 0 30px;
+
+  &__img {
+
+  }
+}
+
+.main {
+  padding-top: 67px;
 }

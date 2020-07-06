@@ -14,20 +14,23 @@ block link
 block title
     title #{htmlWebpackPlugin.options.title}
 
-block headers & footers
-    .emblem(style={"position": "absolute", "left": "30px", "top": "30px"})
-        img.emblem__img(src=require('../../img/Emblem.svg'))
-    include includes/Headers & Footers
-
-block cards
-    .emblem(style={"position": "relative", "left": "30px", "top": "30px"})
-        img.emblem__img(src=require('../../img/Emblem.svg'))
-    include includes/Cards
+block colors & type
+    .app-wrapper
+        .emblem
+            img.emblem__img(src=require('../../img/Emblem.svg'))
+        include includes/Colors & Type
 
 block form elements
     include includes/Form elements
 
-block colors & type
-    include includes/Colors & Type
+block cards
+    //.emblem
+    //    img.emblem__img(src=require('../../img/Emblem.svg'))
+    //include includes/Cards
+
+block headers & footers
+    //.emblem
+    //    img.emblem__img(src=require('../../img/Emblem.svg'))
+    //include includes/Headers & Footers
 
 
