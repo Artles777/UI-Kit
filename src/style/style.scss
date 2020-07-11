@@ -6,6 +6,7 @@
 @import "components/footer";
 @import "components/cards";
 @import "components/colors";
+@import "components/type";
 
 body {
   font-family: Montserrat;
@@ -26,10 +27,6 @@ p, a, input, label, select, li {
   padding: 0;
 }
 
-p {
-  color: rgba(31, 32, 65, 0.75);;
-}
-
 a {
   color: rgba(31, 32, 65, 0.5);
   text-decoration: none;
@@ -40,18 +37,32 @@ a {
   }
 }
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3 {
   margin: 0;
   padding: 0;
   color: #1F2041;
+  font-family: Quicksand;
+  line-height: 1.25em;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 19px;
 }
 
 h3 {
+  font-size: 12px;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-h4 {
-  font-size: 12px;
+p {
+  font-size: 14px;
+  color: rgba(31, 32, 65, 0.75);
 }
 
 label {
@@ -90,7 +101,8 @@ label {
 }
 
 .section {
-  margin-top: 102px;
+  padding-top: 67px;
+  padding-bottom: 145px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &:not(:first-of-type) {
@@ -121,8 +133,4 @@ label {
   &__img {
 
   }
-}
-
-.main {
-  padding-top: 67px;
 }

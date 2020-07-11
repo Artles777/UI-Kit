@@ -8,12 +8,24 @@ include mixins/_type
         {color:'#1F2041', title:'Dark Shade', opacity:'50%'},
         {color:'#1F2041', title:'Dark Shade', opacity:'25%'},
         {color:'#1F2041', title:'Dark Shade', opacity:'5%'},
-        {color:'#BC9CFF', title:'Purple'},
-        {color:'#6FCF97', title:'Green'}
-        ]
+        {color:'#BC9CFF', title:'Purple', opacity:''},
+        {color:'#6FCF97', title:'Green', opacity:''}
+    ];
 
-.main: .container: .row
+    var ArrayTypeList = [
+        {tag:'H1', text:'This one is the sub-section or\n' +
+        'widget title', fontSize: '24px'},
+        {tag:'H2', text:'Next one is the item title inside\n' +
+        'widgets', fontSize: '19px'},
+        {tag:'H3', text:'This is a label or CTA text', fontSize: '12px'},
+        {tag:'Body', text:'This is the body text which is used for most\n' +
+        'of the design, like paragraphs, lists, etc.', fontSize: '14px'}
+    ];
+
+main.main: section.section: .container: .row
     .colors
         each ColorName in ArrayColorName
             +ColorName(ColorName.color, ColorName.title, ColorName.opacity)
-
+    .type
+        each TypeList in ArrayTypeList
+            +TypeList(TypeList.tag, TypeList.text, TypeList.fontSize)
