@@ -15,7 +15,7 @@ module.exports = () => {
                       MiniCssExtractPlugin.loader,
                       'css-loader',
                       MediaQueryPlugin.loader,
-                      'postcss-loader',
+                      // 'postcss-loader',
                       'sass-loader'
                   ]
               },

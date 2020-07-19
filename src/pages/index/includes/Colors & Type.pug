@@ -2,7 +2,7 @@ include mixins/_colors
 include mixins/_type
 
 -
-    var ArrayColorName = [
+    var ColorName = [
         {color:'#1F2041', title:'Dark Shade', opacity:'100%'},
         {color:'#1F2041', title:'Dark Shade', opacity:'75%'},
         {color:'#1F2041', title:'Dark Shade', opacity:'50%'},
@@ -12,7 +12,7 @@ include mixins/_type
         {color:'#6FCF97', title:'Green', opacity:''}
     ];
 
-    var ArrayTypeList = [
+    var TypeName = [
         {tag:'H1', text:'This one is the sub-section or\n' +
         'widget title', fontSize: '24px'},
         {tag:'H2', text:'Next one is the item title inside\n' +
@@ -24,8 +24,8 @@ include mixins/_type
 
 main.main: section.section: .container: .row
     .colors
-        each ColorName in ArrayColorName
-            +ColorName(ColorName.color, ColorName.title, ColorName.opacity)
+        each ListColor in ColorName
+            +ColorName(ListColor.color, ListColor.title, ListColor.opacity)
     .type
-        each TypeList in ArrayTypeList
-            +TypeList(TypeList.tag, TypeList.text, TypeList.fontSize)
+        each ListType in TypeName
+            +TypeList(ListType.tag, ListType.text, ListType.fontSize)

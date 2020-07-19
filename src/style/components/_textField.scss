@@ -1,0 +1,108 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+
+.inputs {
+  @include make-col-ready();
+  @include make-col(4);
+}
+
+.text-field {
+  margin-bottom: 20px;
+  display: inline-block;
+
+  &:nth-child(2) {
+    margin-bottom: 18px;
+  }
+
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(6) {
+    margin-bottom: 38px;
+  }
+
+  &:nth-child(5) {
+    margin-right: 1rem;
+  }
+
+  &:nth-child(7) {
+    margin-bottom: 40px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__labal {
+    font-size: 12px;
+    color: #1F2041;
+    font-family: Montserrat;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-top: 2px;
+  }
+
+  &__state {
+    color: rgba(31, 32, 65, 0.5);
+    font-size: 12px;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+  }
+
+  &__input {
+    background: #FFFFFF;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    margin-top: 2px;
+    position: relative;
+    height: 44px;
+
+    &_field {
+      border: none;
+      opacity: 75%;
+      letter-spacing: -0.015em;
+      width: 100%;
+
+      &:active, &:focus {
+        outline: none;
+      }
+
+      &::-moz-placeholder,
+      &::-webkit-input-placeholder {
+        color: rgba(31, 32, 65, 0.25);
+      }
+    }
+
+    &_btn {
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+      font-size: 18px;
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__dropdown {
+
+    &_field {
+      color: rgba(31, 32, 65, 0.75);
+      width: 100%;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    &_icon {
+      position: absolute;
+      pointer-events: none;
+      margin-right: 12px;
+      font-size: 13px;
+      color: rgba(31, 32, 65, 0.5);
+      right: 0;
+      z-index: 1;
+    }
+  }
+}

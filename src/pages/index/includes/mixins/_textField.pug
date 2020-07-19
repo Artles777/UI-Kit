@@ -1,0 +1,47 @@
+mixin TextField(label, state, placeholder, text, width)
+    if width === 'large'
+        .text-field(style={width:'320px'})
+            .text-field__wrapper
+                    label.text-field__labal= label
+                    if state !== ''
+                        span.text-field__state= state
+            .text-field__input
+                if placeholder === ''
+                    .text-field__dropdown_field= text
+                    span.text-field__dropdown_icon.icon-down-open
+                else if label === 'subscription text field'
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+                    btn.text-field__input_btn(class='icon-right')
+                else
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+    else if width === 'medium'
+        .text-field(style={width:'267px'})
+            .text-field__wrapper
+                label.text-field__labal= label
+                if state !== ''
+                    span.text-field__state= state
+            .text-field__input
+                if placeholder === ''
+                    .text-field__dropdown_field= text
+                    span.text-field__dropdown_icon.icon-down-open
+                else if label === 'subscription text field'
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+                    btn.text-field__input_btn(class='icon-right')
+                else
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+    else if width === 'small'
+        .text-field(style={width: '150px'})
+            .text-field__wrapper
+                label.text-field__labal= label
+                if state !== ''
+                    span.text-field__state= state
+            .text-field__input
+                if placeholder === ''
+                    .text-field__dropdown_field= text
+                    span.text-field__dropdown_icon.icon-down-open
+                else if label === 'subscription text field'
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+                    btn.text-field__input_btn(class='icon-right')
+                else
+                    input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+
