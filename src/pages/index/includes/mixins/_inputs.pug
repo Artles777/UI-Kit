@@ -1,0 +1,18 @@
+mixin Input(placeholder, text, width)
+    .text-field__input(class=width)
+        if placeholder === ''
+            .text-field__dropdown_field= text
+            span.text-field__dropdown_icon.icon-down-open
+        else if placeholder === 'Email' && width === 'medium'
+            input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+            span.text-field__input_btn.icon-right
+        else
+            input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+
+mixin ListInputs(label, state, placeholder, text, width)
+    .text-field(class=width)
+        .text-field__wrapper
+                label.text-field__label= label
+                if state !== ''
+                    span.text-field__state= state
+        +Input(placeholder, text, width)

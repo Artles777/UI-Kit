@@ -1,0 +1,340 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+
+.buttons {
+  @include make-col-ready();
+  @include make-col(4);
+
+  margin-left: 47px;
+
+  & label:not([for]) {
+    display: block;
+    text-transform: uppercase;
+    color: #1F2041;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  & input[type='checkbox'],
+  & input[type='radio'] {
+    opacity: 0;
+  }
+
+  & label {
+    position: relative;
+  }
+}
+
+.checkbox {
+
+  &__label {
+    margin-bottom: 16px;
+    padding-top: 1px;
+  }
+
+  &__item {
+    display: flex;
+
+    // original checkbox
+
+    & input[type='checkbox'] + label::after {
+      content: none;
+    }
+
+    & input[type='checkbox']:checked + label::after {
+      content: '';
+    }
+
+    & input[type='checkbox']:checked + label::before {
+      border: 1px solid #BC9CFF;
+    }
+
+    & label::before,
+    & label::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      left: -1.9rem;
+    }
+
+    & label::before {
+      top: 1px;
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 4px;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    & label::after {
+      top: 0.4rem;
+      left: -1.5rem;
+      width: 8px;
+      height: 6px;
+      border-left: 2px solid #BC9CFF;
+      border-bottom: 2px solid #8BA4F9;
+      transform: rotate(-45deg);
+      border-image-slice: 1;
+      border-image-source: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+  }
+
+  &__input {
+    @include size(20px, 20px);
+    margin: 0 10px 10px 0;
+  }
+
+  &__content {
+    white-space: pre;
+    line-height: 1.125rem;
+  }
+}
+
+.radio {
+  margin-top: 40px;
+
+  &__label {
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    display: inline-flex;
+    margin-right: 17px;
+
+    // original radio
+
+    & input[type='radio'] + label::after {
+      content: none;
+    }
+
+    & input[type='radio']:checked + label::after {
+      content: '';
+    }
+
+    & input[type='radio']:checked + label::before {
+      border: 1px solid #BC9CFF;
+    }
+
+    & label::before,
+    & label::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      left: -1.9rem;
+    }
+
+    & label::before {
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 50%;
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+
+    & label::after {
+      @include size(12px, 12px);
+
+      top: 0.25rem;
+      left: -1.64rem;
+      border-radius: 50%;
+      transform: rotate(-45deg);
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+  }
+
+  &__input {
+    @include size(20px, 20px);
+
+    margin-right: 10px;
+  }
+
+  &__content {
+
+  }
+}
+
+.toggle {
+  margin-top: 33px;
+
+  &__label {
+    margin-bottom: 13px;
+  }
+
+  &__item {
+    display: inline-flex;
+    margin-bottom: 13px;
+
+    // original checkbox
+
+    & input[type='checkbox'] + label::after {
+      transition: transform 0.3s linear 0s;
+    }
+
+    & input[type='checkbox']:checked + label::after {
+      transition: transform 0.3s linear 0s;
+      transform: translateX(1.2rem);
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+
+    & input[type='checkbox']:checked + label::before {
+      border: 1px solid #BC9CFF;
+    }
+
+    & label::before,
+    & label::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      left: -3.1rem;
+    }
+
+    & label::before {
+      @include size(40px, 20px);
+
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 10px;
+    }
+
+    & label::after {
+      @include size(12px, 12px);
+
+      top: 0.25rem;
+      left: -2.8rem;
+      border-radius: 50%;
+      background: rgba(31, 32, 65, 0.25);
+    }
+  }
+
+  &__input {
+    @include size(40px, 20px);
+
+    margin-right: 9px;
+  }
+
+  &__content {
+
+  }
+}
+
+.like {
+  margin-top: 30px;
+
+  &__label {
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    display: inline-flex;
+
+    // original checkbox
+
+    & input[type='checkbox']:checked + label::after {
+      content: '\2764';
+      color: #BC9CFF;
+      font-size: 0.7rem;
+      top: 0.05rem;
+
+    }
+
+    & input[type='checkbox']:checked + label::before {
+      border: 1px solid #BC9CFF;
+    }
+
+    & label {
+      top: 0.1rem;
+      right: 1.15rem;
+      font-size: 10px;
+      color: rgba(31, 32, 65, 0.25);
+    }
+
+    & label::before,
+    & label::after {
+      position: absolute;
+      content: '';
+      display: inline-block;
+      top: -0.1rem;
+      left: -1.32rem;
+    }
+
+    & label::before {
+      @include size(40px, 20px);
+
+      border: 1px solid rgba(31, 32, 65, 0.25);
+      border-radius: 10px;
+    }
+
+    & label::after {
+      @include size(12px, 12px);
+
+      content: '\2661';
+      top: -0.2rem;
+      left: -1rem;
+      color: rgba(31, 32, 65, 0.25);
+      font-size: 1rem;
+    }
+  }
+
+  &__input {
+    @include size(40px, 20px);
+  }
+
+  & input[type='checkbox']:checked {
+    color: #BC9CFF;
+  }
+
+  &__content {
+
+  }
+}
+
+.rate {
+  margin-top: 30px;
+
+  &__label {
+    margin-bottom: 15px;
+  }
+
+  &__item {
+    display: inline-flex;
+    direction: rtl;
+    margin-right: 17px;
+
+    // original checkbox
+    & input[type='radio'] {
+      margin-right: 2px;
+    }
+
+    & label:hover::before,
+    label:hover ~ label::before,
+    input[type='radio']:checked ~ label::before {
+      content: '\2605';
+
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+
+    & label::before {
+      position: absolute;
+      content: '\2606';
+      display: inline-block;
+      top: 0;
+      left: 0;
+      color: rgba(31, 32, 65, 0.25);
+      font-size: 1.75rem;
+      line-height: 1.4rem;
+      margin-right: 2px;
+
+      background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+
+  &__input {
+    @include size(22px, 22px);
+  }
+
+  &__content {
+
+  }
+}

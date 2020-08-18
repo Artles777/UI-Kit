@@ -1,13 +1,13 @@
-include mixins/_textField
+include mixins/_inputs
+include mixins/_buttons
 
 -
-    var TextField = [
+    var inputState = [
         {
             label: 'Text Field',
             state: 'Default',
             placeholder: 'Email',
             text: '',
-            display: 'none',
             width: 'large'
         },
         {
@@ -61,15 +61,137 @@ include mixins/_textField
         }
     ]
 
+    var checkboxState = [
+        {
+            state: '',
+            type: 'checkbox',
+            text: 'Можно курить'
+        },
+        {
+            state: 'checked',
+            type: 'checkbox',
+            text: 'Можно с питомцами'
+        },
+        {
+            state: 'checked',
+            type: 'checkbox',
+            text: 'Можно пригласить гостей\n' +
+                    '(до 10 человек)'
+        }
+    ]
+
+    var radioState = [
+        {
+            state: 'checked',
+            type: 'radio',
+            text: 'Мужчина'
+        },
+        {
+            state: '',
+            type: 'radio',
+            text: 'Женщина'
+        }
+    ]
+
+    var toggleState = [
+        {
+            state: 'checked',
+            type: 'checkbox',
+            text: 'Получать спецпредложения'
+        },
+        {
+            state: '',
+            type: 'checkbox',
+            text: 'Получать спецпредложения'
+        }
+    ]
+
+    var likeState = [
+        {
+            state: '',
+            type: 'checkbox',
+            text: '2'
+        },
+        {
+            state: 'checked',
+            type: 'checkbox',
+            text: '12'
+        }
+    ]
+
+    var rateState = [
+        {
+            id: 1,
+            state: '',
+            type: 'radio',
+            count: 5
+        },
+        {
+            id: 2,
+            state: '',
+            type: 'radio',
+            count: 5
+        }
+    ]
+
 main.main: section.section: .container: .row
     .inputs
         // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
-        each ListTextField in TextField
-            +TextField(
-                ListTextField.label,
-                ListTextField.state,
-                ListTextField.placeholder,
-                ListTextField.text,
-                ListTextField.width
+        each listInputState in inputState
+            +ListInputs(
+                listInputState.label,
+                listInputState.state,
+                listInputState.placeholder,
+                listInputState.text,
+                listInputState.width
             )
+    .buttons
+        .checkbox
+            label.checkbox__label Checkbox Buttons
+            each listCheckbox, index in checkboxState
+                +CheckboxBtn(
+                    listCheckbox.state,
+                    listCheckbox.type,
+                    listCheckbox.text,
+                    index
+                )
 
+        .radio
+            label.radio__label Radio Buttons
+            each listRadio, index in radioState
+                +RadioBtn(
+                    listRadio.state,
+                    listRadio.type,
+                    listRadio.text,
+                    index
+                )
+
+        .toggle
+            label.toggle__label Toggle
+            each listToggle, index in toggleState
+                +ToggleBtn(
+                    listToggle.state,
+                    listToggle.type,
+                    listToggle.text,
+                    index
+                )
+
+        .like
+            label.like__label like button
+            each listLike, index in likeState
+                +LikeBtn(
+                    listLike.state,
+                    listLike.type,
+                    listLike.text,
+                    index
+                )
+
+        .rate
+            label.rate__label rate button
+            each listRate in rateState
+                +RateBtn(
+                    listRate.state,
+                    listRate.type,
+                    listRate.id,
+                    listRate.count
+                )
