@@ -6,3 +6,19 @@ $container-max-widths: (
 );
 
 $grid-gutter-width: 40px;
+
+$width-large: 20rem;
+$width-medium: 16.625rem;
+$width-small: 9.375rem;
+
+@mixin width-inputs($size) {
+  @if($size == 'large') {
+    width: $width-large;
+  }
+  @if($size == 'medium') {
+    width: $width-medium;
+  }
+  @if($size == 'small') {
+    width: $width-small;
+  }
+}

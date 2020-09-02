@@ -1,18 +1,34 @@
 mixin Input(placeholder, text, width)
-    .text-field__input(class=width)
-        if placeholder === ''
-            .text-field__dropdown_field= text
-            span.text-field__dropdown_icon.icon-down-open
-        else if placeholder === 'Email' && width === 'medium'
-            input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
-            span.text-field__input_btn.icon-right
-        else
-            input.text-field__input_field(placeholder=`${placeholder}` value=`${text}`)
+    .text-field__wrapper(class=width)
+        input.text-field__input(placeholder=`${placeholder}` value=`${text}`)
 
-mixin ListInputs(label, state, placeholder, text, width)
+mixin Select(text, width)
+    .text-field__wrapper(class=width)
+        div.text-field__dropdown_field= text
+        span.text-field__dropdown_icon.icon-down-open
+
+mixin Subscription(placeholder, text, width)
+    .text-field__wrapper(class=width)
+        input.text-field__input(placeholder=`${placeholder}`)
+        span.text-field__btn.icon-right
+
+mixin InputWithLabel(label, state, placeholder, text, width)
     .text-field(class=width)
-        .text-field__wrapper
-                label.text-field__label= label
-                if state !== ''
-                    span.text-field__state= state
+        label.text-field__label= label
+        if state !== ''
+            span.text-field__state= state
         +Input(placeholder, text, width)
+
+mixin SelectWithLabel(label, state, text, width)
+    .text-field(class=width)
+        label.text-field__label= label
+        if state !== ''
+            span.text-field__state= state
+        +Select(text, width)
+
+mixin SubscriptionWithLabel(label, state, placeholder, width)
+    .text-field(class=width)
+        label.text-field__label= label
+        if state !== ''
+            span.text-field__state= state
+        +Subscription(placeholder, width)
