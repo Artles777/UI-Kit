@@ -8,27 +8,16 @@
   &__wrapper {
     display: flex;
     padding-bottom: 50px;
-
-    &_index {
-      @include make-col(1.9);
-
-      display: flex;
-      justify-content: flex-end;
-      padding-right: 30px;
-      padding-left: 5px;
-    }
-
-    &_text {
-
-    }
   }
 
   &__index {
+    @include make-col(1.9);
+
+    display: inline-flex;
+    justify-content: flex-end;
     color: rgba(31, 32, 65, 0.25);
-  }
-
-  &__text {
-
+    padding-right: 30px;
+    padding-left: 5px;
   }
 }
 

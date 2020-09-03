@@ -19,52 +19,38 @@ body {
 }
 
 ul {
-  margin: 0;
-  padding: 0;
+  @include reset-style(m-p)
 }
 
-p, a, input, select, label, li {
+a, input, select, label, li {
+  @include reset-style(m-p);
+
   font-size: 14px;
-  margin: 0;
-  padding: 0;
 }
 
 a {
-  color: rgba(31, 32, 65, 0.5);
-  text-decoration: none;
-
-  &:hover {
-    color: rgba(31, 32, 65, 0.5);
-    text-decoration: none;
-  }
+  @include reset-style(link)
 }
 
 h1, h2, h3 {
-  margin: 0;
-  padding: 0;
-  color: #1F2041;
-  font-family: Quicksand;
-  line-height: 1.25em;
+  @include reset-style(m-p);
 }
 
 h1 {
-  font-size: 24px;
+  @include font-theme(h1);
 }
 
 h2 {
-  font-size: 19px;
+  @include font-theme(h2);
 }
 
 h3 {
-  font-size: 12px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  @include font-theme(h3);
 }
 
 p {
-  font-size: 14px;
-  color: rgba(31, 32, 65, 0.75);
+  @include font-theme(body);
+  @include reset-style(m-p);
 }
 
 .active {

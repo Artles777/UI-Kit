@@ -18,7 +18,33 @@ $color-green: #6FCF97;
 $font-h1: 24px;
 $font-h2: 19px;
 $font-h3: 12px;
-$font-p: 14px;
+$font-body: 14px;
+
+@mixin reset-style($tag, $option: rgba(31, 32, 65, 0.5)) {
+  @if($tag == m-p) {
+    margin: 0;
+    padding: 0;
+  }
+  @if($tag == p-m) {
+    padding: 0;
+    margin: 0;
+  }
+  @if($tag == link) {
+    color: $option;
+    text-decoration: none;
+    &:hover {
+      color: $option;
+      text-decoration: none;
+    }
+  }
+  @if($tag == border) {
+    border: none;
+    outline: none;
+    &:active, &:focus {
+      outline: none;
+    }
+  }
+}
 
 @mixin width-inputs($size) {
   @if($size == 'large') {
@@ -44,5 +70,37 @@ $font-p: 14px;
   }
   @if($color != null) {
     opacity: $opacity;
+  }
+}
+
+@mixin font-theme($font: body) {
+  @if($font == h1) {
+    font-size: $font-h1;
+    font-weight: 700;
+    font-family: Quicksand;
+    line-height: 1.25em;
+    color: rgba(31, 32, 65, 1);
+  }
+  @if($font == h2) {
+    font-size: $font-h2;
+    font-weight: 700;
+    font-family: Quicksand;
+    line-height: 1.25em;
+    color: rgba(31, 32, 65, 1);
+  }
+  @if($font == h3) {
+    font-size: $font-h3;
+    font-weight: 600;
+    font-family: Quicksand;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    line-height: 1.25em;
+    color: rgba(31, 32, 65, 1);
+  }
+  @if($font == body) {
+    font-size: $font-body;
+    font-weight: 400;
+    font-family: Montserrat;
+    color: rgba(31, 32, 65, 0.75);
   }
 }

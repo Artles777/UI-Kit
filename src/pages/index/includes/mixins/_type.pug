@@ -1,13 +1,11 @@
 mixin TypeList(tag, text, fontSize)
     .type__wrapper
-        .type__wrapper_index
-            p.type__index(style={'font-size':`${fontSize}`})= tag
-        .type__wrapper_text
-            if tag === 'H1'
-                h1.type__text= text
-            else if tag === 'H2'
-                h2.type__text= text
-            else if tag === 'H3'
-                h3.type__text= text
-            else if tag === 'Body'
-                p.type__text= text
+        p.type__index(style={'font-size':`${fontSize}`})= tag
+        if tag === 'H1'
+            h1.type__text= text
+        else if tag === 'H2'
+            h2.type__text= text
+        else if tag === 'H3'
+            h3.type__text= text
+        else if tag === 'Body'
+            p.type__text= text
