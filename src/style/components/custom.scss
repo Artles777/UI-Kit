@@ -11,6 +11,15 @@ $width-large: 20rem;
 $width-medium: 16.625rem;
 $width-small: 9.375rem;
 
+$color-dark: #1F2041;
+$color-purple: #BC9CFF;
+$color-green: #6FCF97;
+
+$font-h1: 24px;
+$font-h2: 19px;
+$font-h3: 12px;
+$font-p: 14px;
+
 @mixin width-inputs($size) {
   @if($size == 'large') {
     width: $width-large;
@@ -20,5 +29,20 @@ $width-small: 9.375rem;
   }
   @if($size == 'small') {
     width: $width-small;
+  }
+}
+
+@mixin color-theme($color, $opacity: 100%) {
+  @if($color == dark) {
+    background: $color-dark;
+  }
+  @if($color == purple) {
+    background: $color-purple;
+  }
+  @if($color == green) {
+    background: $color-green;
+  }
+  @if($color != null) {
+    opacity: $opacity;
   }
 }

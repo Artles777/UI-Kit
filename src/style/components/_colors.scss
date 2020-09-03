@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap-reboot";
+@import "custom";
 
 .colors {
   @include make-col-ready();
@@ -18,6 +19,34 @@
 
     border-radius: 6px;
     margin-left: 10px;
+
+    &_1F2041 {
+      @include color-theme(dark);
+
+      &_2 {
+        @include color-theme('', 75%);
+      }
+
+      &_3 {
+        @include color-theme('', 50%);
+      }
+
+      &_4 {
+        @include color-theme('', 25%);
+      }
+
+      &_5 {
+        @include color-theme('', 5%);
+      }
+    }
+
+    &_BC9CFF {
+      @include color-theme(purple);
+    }
+
+    &_6FCF97 {
+      @include color-theme(green);
+    }
   }
 
   &__desc {

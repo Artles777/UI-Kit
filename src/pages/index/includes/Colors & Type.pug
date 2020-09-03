@@ -3,13 +3,38 @@ include mixins/_type
 
 -
     var ColorName = [
-        {color:'#1F2041', title:'Dark Shade', opacity:'100%'},
-        {color:'#1F2041', title:'Dark Shade', opacity:'75%'},
-        {color:'#1F2041', title:'Dark Shade', opacity:'50%'},
-        {color:'#1F2041', title:'Dark Shade', opacity:'25%'},
-        {color:'#1F2041', title:'Dark Shade', opacity:'5%'},
-        {color:'#BC9CFF', title:'Purple', opacity:''},
-        {color:'#6FCF97', title:'Green', opacity:''}
+        {
+            color:'1F2041',
+            title:'Dark Shade 100%',
+        },
+        {
+            color:'1F2041',
+            title:'Dark Shade 75%',
+        },
+        {
+            color:'1F2041',
+            title:'Dark Shade 50%',
+        },
+        {
+
+            color:'1F2041',
+            title:'Dark Shade 25%',
+        },
+        {
+
+            color:'1F2041',
+            title:'Dark Shade 5%',
+        },
+        {
+
+            color:'BC9CFF',
+            title:'Purple',
+        },
+        {
+
+            color:'6FCF97',
+            title:'Green',
+        },
     ];
 
     var TypeName = [
@@ -19,13 +44,13 @@ include mixins/_type
         'widgets', fontSize: '19px'},
         {tag:'H3', text:'This is a label or CTA text', fontSize: '12px'},
         {tag:'Body', text:'This is the body text which is used for most\n' +
-        'of the design, like paragraphs, lists, etc.', fontSize: '14px'}
+        'of the design, like paragraphs, lists, etc.', fontSize: '14px'},
     ];
 
 main.main: section.section: .container: .row
     .colors
-        each ListColor in ColorName
-            +ColorName(ListColor.color, ListColor.title, ListColor.opacity)
+        each ListColor, index in ColorName
+            +ColorName(ListColor.color, ListColor.title, index + 1)
     .type
         each ListType in TypeName
             +TypeList(ListType.tag, ListType.text, ListType.fontSize)
