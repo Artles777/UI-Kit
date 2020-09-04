@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap-reboot";
+@import "custom";
 
 .buttons {
   @include make-col-ready();
@@ -7,11 +8,9 @@
   margin-left: 47px;
 
   & label:not([for]) {
+    @include font-theme(h3);
+
     display: block;
-    text-transform: uppercase;
-    color: #1F2041;
-    font-size: 12px;
-    font-weight: 700;
   }
 
   & input[type='checkbox'],
@@ -27,7 +26,7 @@
 .checkbox {
 
   &__label {
-    margin-bottom: 16px;
+    margin-bottom: 19px;
     padding-top: 1px;
   }
 
@@ -89,7 +88,7 @@
 }
 
 .radio {
-  margin-top: 40px;
+  margin-top: 42px;
 
   &__label {
     margin-bottom: 15px;
@@ -151,10 +150,10 @@
 }
 
 .toggle {
-  margin-top: 33px;
+  margin-top: 34px;
 
   &__label {
-    margin-bottom: 13px;
+    margin-bottom: 16px;
   }
 
   &__item {
@@ -217,7 +216,7 @@
   margin-top: 30px;
 
   &__label {
-    margin-bottom: 15px;
+    margin-bottom: 16px;
   }
 
   &__item {
@@ -285,7 +284,7 @@
 }
 
 .rate {
-  margin-top: 30px;
+  margin-top: 35px;
 
   &__label {
     margin-bottom: 15px;

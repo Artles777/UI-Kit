@@ -1,5 +1,6 @@
 include mixins/_inputs
 include mixins/_buttons
+include mixins/_interact
 
 -
     var inputState = [
@@ -245,3 +246,7 @@ main.main: section.section: .container: .row
                     listRate.id,
                     listRate.count
                 )
+    .interact
+        .slider
+            +Slider
+
