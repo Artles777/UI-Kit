@@ -5,12 +5,65 @@
   @include make-col-ready();
   @include make-col(4);
 
-
+  padding-left: 59px;
 }
 
-.slider {
+.range {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-flow: wrap;
+  width: 100%;
+  padding-right: 55px;
 
   &__label {
     @include font-theme(h3);
+  }
+
+  &__state {
+    font-family: Montserrat;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 0.9rem;
+  }
+
+  &__wrapper {
+    width: 100%;
+  }
+
+  &__input {
+    margin-top: 20px;
+    height: 4px;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    border-radius: 6px;
+    box-sizing: content-box;
+    position: relative;
+  }
+
+  &__thumb {
+    @include size(12px, 12px);
+
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 50%;
+    border: 2px solid #FFFFFF;
+    box-sizing: content-box;
+    top: -150%;
+    position: absolute;
+    z-index: 100;
+
+    &_left {
+      left: 28%;
+    }
+
+    &_right {
+      right: 33%;
+    }
+  }
+
+  &__middle {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    width: 30%;
+    height: 4px;
+    position: relative;
+    left: 32%;
   }
 }

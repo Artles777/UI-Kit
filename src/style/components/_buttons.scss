@@ -5,7 +5,7 @@
   @include make-col-ready();
   @include make-col(4);
 
-  margin-left: 47px;
+  padding-left: 67px;
 
   & label:not([for]) {
     @include font-theme(h3);

@@ -148,6 +148,13 @@ include mixins/_interact
         }
     ]
 
+    var rangeState = [
+        {
+            label: 'Range Slider',
+            state: '5 000₽ - 10 000₽',
+        }
+    ]
+
 main.main: section.section: .container: .row
     .inputs
         // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
@@ -247,6 +254,10 @@ main.main: section.section: .container: .row
                     listRate.count
                 )
     .interact
-        .slider
-            +Slider
+        .range
+            each listRange in rangeState
+            +Range(
+                listRange.label,
+                listRange.state
+            )
 

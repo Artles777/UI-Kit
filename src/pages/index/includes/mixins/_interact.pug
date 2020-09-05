@@ -1,3 +1,8 @@
-mixin Slider()
-    label.slider__label Range Slider
-    span.slider__state 5 000₽ - 10 000₽
+mixin Range(label, state)
+    label.range__label= label
+    span.range__state= state
+    .range__wrapper
+       .range__input
+           .range__thumb.range__thumb_left
+           .range__middle
+           .range__thumb.range__thumb_right
