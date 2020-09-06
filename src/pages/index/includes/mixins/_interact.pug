@@ -6,3 +6,9 @@ mixin Range(label, state)
            .range__thumb.range__thumb_left
            .range__middle
            .range__thumb.range__thumb_right
+
+mixin Button-click(context, border, state)
+    if (border === '')
+        button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
+    else if (border === 'border')
+        button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context

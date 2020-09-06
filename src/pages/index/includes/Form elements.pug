@@ -155,6 +155,29 @@ include mixins/_interact
         }
     ]
 
+    var buttonClickState = [
+        {
+            context: 'click me',
+            border: '',
+            state: 'active',
+        },
+        {
+            context: 'click me',
+            border: '',
+            state: 'disable',
+        },
+        {
+            context: 'click me',
+            border: 'border',
+            state: 'active',
+        },
+        {
+            context: 'click me',
+            border: 'border',
+            state: 'disable',
+        },
+    ]
+
 main.main: section.section: .container: .row
     .inputs
         // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
@@ -260,4 +283,12 @@ main.main: section.section: .container: .row
                     listRange.label,
                     listRange.state
                 )
-
+        .buttons-click
+            label.buttons-click__label buttons
+            .buttons-click__wrapper
+                each listButtonClick in buttonClickState
+                    +Button-click(
+                        listButtonClick.context,
+                        listButtonClick.border,
+                        listButtonClick.state
+                    )

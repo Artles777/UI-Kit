@@ -71,6 +71,12 @@ $font-body: 14px;
   @if($color != null) {
     opacity: $opacity;
   }
+  @if($color == liner-purple) {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+  @if($color == liner-green) {
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  }
 }
 
 @mixin font-theme($font: body) {
