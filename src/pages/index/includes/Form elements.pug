@@ -178,6 +178,17 @@ include mixins/_interact
         },
     ]
 
+    var linkClickState = [
+        {
+            context: 'click me',
+            href: '#',
+        },
+        {
+            context: 'click me',
+            href: '#',
+        },
+    ]
+
 main.main: section.section: .container: .row
     .inputs
         // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
@@ -291,4 +302,11 @@ main.main: section.section: .container: .row
                         listButtonClick.context,
                         listButtonClick.border,
                         listButtonClick.state
+                    )
+        .buttons-link
+            .buttons-link__wrapper
+                each listLinkClick in linkClickState
+                    +Button-link(
+                        listLinkClick.context,
+                        listLinkClick.href
                     )

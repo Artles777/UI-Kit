@@ -12,3 +12,6 @@ mixin Button-click(context, border, state)
         button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
     else if (border === 'border')
         button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
+
+mixin Button-link(context, href)
+    a.buttons-link__link(href=`${href}`)= context

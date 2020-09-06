@@ -128,3 +128,29 @@
     }
   }
 }
+
+.buttons-link {
+
+  &__wrapper {
+    margin-top: 26px;
+  }
+
+  &__link {
+    @include font-theme(h3);
+
+    color: $color-purple;
+    &:hover {
+      color: $color-dark;
+      opacity: 50%;
+    }
+
+    &:first-child {
+      padding-right: 20px;
+    }
+
+    &:last-child {
+      color: $color-dark;
+      opacity: 50%;
+    }
+  }
+}
