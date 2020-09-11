@@ -178,13 +178,27 @@ include mixins/_interact
         },
     ]
 
-    var linkClickState = [
+    var buttonLinkState = [
         {
             context: 'click me',
             href: '#',
         },
         {
             context: 'click me',
+            href: '#',
+        },
+    ]
+
+    var buttonIconState = [
+        {
+            context: 'перейти к оплате',
+            href: '#',
+        },
+    ]
+
+    var paginationState = [
+        {
+            context: [1, 2, 3, 15],
             href: '#',
         },
     ]
@@ -295,18 +309,35 @@ main.main: section.section: .container: .row
                     listRange.state
                 )
         .buttons-click
-            label.buttons-click__label buttons
+            label.buttons-click__label Buttons
             .buttons-click__wrapper
                 each listButtonClick in buttonClickState
-                    +Button-click(
+                    +ButtonClick(
                         listButtonClick.context,
                         listButtonClick.border,
                         listButtonClick.state
                     )
         .buttons-link
             .buttons-link__wrapper
-                each listLinkClick in linkClickState
-                    +Button-link(
-                        listLinkClick.context,
-                        listLinkClick.href
+                each listButtonLinkClick in buttonLinkState
+                    +ButtonLink(
+                        listButtonLinkClick.context,
+                        listButtonLinkClick.href
                     )
+
+        .buttons-icon
+            each listButtonIconClick in buttonIconState
+                +ButtonWithIcon(
+                    listButtonIconClick.context,
+                    listButtonIconClick.href
+                )
+
+        .pagination
+            label.pagination__label pagination
+            each listPagination in paginationState
+                +Pagination(
+                    listPagination.context,
+                    listPagination.href,
+                    listPagination.count
+                )
+

@@ -25,8 +25,8 @@ ul {
 
 a, input, select, label, li {
   @include reset-style(m-p);
+  @include color-theme(dark-50, color);
 
-  color: rgba(31, 32, 65, 0.5);
   font-size: 14px;
 }
 

@@ -7,11 +7,25 @@ mixin Range(label, state)
            .range__middle
            .range__thumb.range__thumb_right
 
-mixin Button-click(context, border, state)
+mixin ButtonClick(context, border, state)
     if (border === '')
         button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
     else if (border === 'border')
         button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
 
-mixin Button-link(context, href)
+mixin ButtonLink(context, href)
     a.buttons-link__link(href=`${href}`)= context
+
+mixin ButtonWithIcon(context, href)
+    .buttons-icon__wrapper
+        a.buttons-icon__link(href=`${href}`) #{context}
+        i.buttons-icon__icon.icon-right
+
+mixin PaginationPage(context, href, index)
+    li.pagination__page(class=`pagination__page_${index}`)
+        a.pagination__link(href=`${href}` class=`pagination__link_${index}`) #{context}
+
+mixin Pagination(context, href)
+    ul.pagination__wrapper
+        each listPage, index in context
+            +PaginationPage(listPage, href, index)

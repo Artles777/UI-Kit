@@ -21,22 +21,22 @@
     margin-left: 10px;
 
     &_1F2041 {
-      @include color-theme(dark);
+      @include color-theme(dark-100);
 
       &_2 {
-        @include color-theme('', 75%);
+        @include color-theme(dark-75);
       }
 
       &_3 {
-        @include color-theme('', 50%);
+        @include color-theme(dark-50);
       }
 
       &_4 {
-        @include color-theme('', 25%);
+        @include color-theme(dark-25);
       }
 
       &_5 {
-        @include color-theme('', 5%);
+        @include color-theme(dark-5);
       }
     }
 

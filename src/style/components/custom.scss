@@ -11,14 +11,19 @@ $width-large: 20rem;
 $width-medium: 16.625rem;
 $width-small: 9.375rem;
 
-$color-dark: #1F2041;
-$color-purple: #BC9CFF;
-$color-green: #6FCF97;
+$dark-shade-100: rgba(31, 32, 65, 1);
+$dark-shade-75: rgba(31, 32, 65, 0.75);
+$dark-shade-50: rgba(31, 32, 65, 0.5);
+$dark-shade-25: rgba(31, 32, 65, 0.25);
+$dark-shade-5: rgba(31, 32, 65, 0.05);
+$purple: #BC9CFF;
+$green: #6FCF97;
 
 $font-h1: 24px;
 $font-h2: 19px;
 $font-h3: 12px;
 $font-body: 14px;
+$font-btn-arrow: 18px;
 
 @mixin reset-style($tag, $option: rgba(31, 32, 65, 0.5)) {
   @if($tag == m-p) {
@@ -58,24 +63,70 @@ $font-body: 14px;
   }
 }
 
-@mixin color-theme($color, $opacity: 100%) {
-  @if($color == dark) {
-    background: $color-dark;
+@mixin color-theme($color, $option: background) {
+  @if($color == dark-100 and $option == background) {
+    background: $dark-shade-100;
   }
-  @if($color == purple) {
-    background: $color-purple;
+  @if($color == dark-75 and $option == background) {
+    background: $dark-shade-75;
   }
-  @if($color == green) {
-    background: $color-green;
+  @if($color == dark-50 and $option == background) {
+    background: $dark-shade-50;
   }
-  @if($color != null) {
-    opacity: $opacity;
+  @if($color == dark-25 and $option == background) {
+    background: $dark-shade-25;
   }
-  @if($color == liner-purple) {
+  @if($color == dark-5 and $option == background) {
+    background: $dark-shade-5;
+  }
+  @if($color == purple and $option == background) {
+    background: $purple;
+  }
+  @if($color == green and $option == background) {
+    background: $green;
+  }
+  @if($color == liner-purple and $option == background) {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   }
-  @if($color == liner-green) {
+  @if($color == liner-green and $option == background) {
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+  }
+  @if($color == liner-purple and $option == disable) {
+    background: linear-gradient(180deg, rgba(188, 156, 255, 0.5) 0%, rgba(139, 164, 249, 0.5) 100%) !important;
+  }
+
+  @if($color == dark-100 and $option == color) {
+    color: $dark-shade-100;
+  }
+  @if($color == dark-75 and $option == color) {
+    color: $dark-shade-75;
+  }
+  @if($color == dark-50 and $option == color) {
+    color: $dark-shade-50;
+  }
+  @if($color == dark-25 and $option == color) {
+    color: $dark-shade-25;
+  }
+  @if($color == dark-5 and $option == color) {
+    color: $dark-shade-5;
+  }
+  @if($color == purple and $option == color) {
+    color: $purple;
+  }
+  @if($color == green and $option == color) {
+    color: $green;
+  }
+  @if($color == liner-purple and $option == color) {
+    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+@mixin opacity-theme($opacity: 100%) {
+  @if($opacity != 100%) {
+    opacity: $opacity;
   }
 }
 
@@ -107,5 +158,11 @@ $font-body: 14px;
     font-weight: 400;
     font-family: Montserrat;
     color: rgba(31, 32, 65, 0.75);
+  }
+  @if($font == arrow) {
+    font-size: $font-btn-arrow;
+    font-weight: 400;
+    font-family: Montserrat;
+    color: #FFFFFF;
   }
 }

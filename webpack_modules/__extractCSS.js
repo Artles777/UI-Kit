@@ -15,7 +15,6 @@ module.exports = () => {
                       MiniCssExtractPlugin.loader,
                       'css-loader',
                       MediaQueryPlugin.loader,
-                      // 'postcss-loader',
                       'sass-loader'
                   ]
               },
@@ -25,7 +24,16 @@ module.exports = () => {
                       MiniCssExtractPlugin.loader,
                       'css-loader'
                   ]
-              }
+              },
+              {
+                  test: /\.pcss$/,
+                  use: [
+                      MiniCssExtractPlugin.loader,
+                      'css-loader',
+                      MediaQueryPlugin.loader,
+                      'postcss-loader'
+                  ]
+              },
           ]
         },
         plugins: [

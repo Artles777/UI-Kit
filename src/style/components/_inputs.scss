@@ -44,7 +44,8 @@
   }
 
   &__state {
-    color: rgba(31, 32, 65, 0.5);
+    @include color-theme(dark-50, color());
+
     font-size: 12px;
     font-family: Montserrat;
     text-transform: uppercase;
@@ -55,7 +56,7 @@
     @include size(100%, 44px);
 
     background: #FFFFFF;
-    border: 1px solid rgba(31, 32, 65, 0.25);
+    border: 1px solid $dark-shade-25;
     border-radius: 4px;
     display: flex;
     align-items: center;
@@ -64,13 +65,14 @@
     position: relative;
 
     &:hover {
-      border: 1px solid rgba(31, 32, 65, 0.5);
+      border: 1px solid $dark-shade-50;
     }
   }
 
   &__input {
+    @include color-theme(dark-75, color);
+
     border: none;
-    opacity: 75%;
     letter-spacing: -0.015em;
     width: 100%;
 
@@ -78,17 +80,14 @@
       outline: none;
     }
 
-    &::-moz-placeholder,
-    &::-webkit-input-placeholder {
-      color: rgba(31, 32, 65, 0.25);
+    &::placeholder {
+      @include color-theme(dark-25, color);
     }
   }
 
   &__btn {
-    background-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    color: transparent;
-    background-clip: text;
-    -webkit-background-clip: text;
+    @include color-theme(liner-purple, color);
+    
     font-size: 18px;
     margin-right: 0.5rem;
   }
@@ -125,4 +124,3 @@
     @include width-inputs(small);
   }
 }
-
