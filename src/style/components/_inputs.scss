@@ -44,12 +44,7 @@
   }
 
   &__state {
-    @include color-theme(dark-50, color());
-
-    font-size: 12px;
-    font-family: Montserrat;
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
+    @include font-theme(state);
   }
 
   &__wrapper {

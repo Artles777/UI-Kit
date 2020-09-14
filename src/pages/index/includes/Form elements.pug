@@ -200,144 +200,188 @@ include mixins/_interact
         {
             context: [1, 2, 3, 15],
             href: '#',
+            inform: '1 – 12 из 100+ вариантов аренды',
         },
     ]
 
-main.main: section.section: .container: .row
-    .inputs
-        // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
-        each listInputState in inputState
-            +InputWithLabel(
-                listInputState.label,
-                listInputState.state,
-                listInputState.placeholder,
-                listInputState.text,
-                listInputState.width
-            )
-        each listDropdownState in dropdownState
-            +SelectWithLabel(
-                listDropdownState.label,
-                listDropdownState.state,
-                listDropdownState.text,
-                listDropdownState.width
-            )
-        each listMaskedState in maskedState
-            +InputWithLabel(
-                listMaskedState.label,
-                listMaskedState.state,
-                listMaskedState.placeholder,
-                listMaskedState.text,
-                listMaskedState.width
-            )
-        each listDateState in dateState
-            +SelectWithLabel(
-                listDateState.label,
-                listDateState.state,
-                listDateState.text,
-                listDateState.width
-            )
-        each listFilterState in filterState
-            +SelectWithLabel(
-                listFilterState.label,
-                listFilterState.state,
-                listFilterState.text,
-                listFilterState.width
-            )
-        each listSubscriptionState in subscriptionState
-            +SubscriptionWithLabel(
-                listSubscriptionState.label,
-                listSubscriptionState.state,
-                listSubscriptionState.placeholder,
-                listSubscriptionState.width
-            )
+    var dropdownRoomState = [
+        {
+            label: 'Dropdown',
+            state: 'Default',
+            text: '2 спальни, 2 кровати...',
+            width: 'text-field__medium',
+            active: ''
+        },
+        {
+            label: 'Dropdown',
+            state: 'expanded',
+            text: '2 спальни, 2 кровати...',
+            width: 'text-field__medium',
+            description: [
+                {
+                    text: 'спальни',
+                    counter: 2
+                },
+                {
+                    text: 'кровати',
+                    counter: 2
+                },
+                {
+                    text: 'ванные комнаты',
+                    counter: 0
+                },
+            ],
+        }
+    ]
 
-    .buttons
-        .checkbox
-            label.checkbox__label Checkbox Buttons
-            each listCheckbox, index in checkboxState
-                +CheckboxBtn(
-                    listCheckbox.state,
-                    listCheckbox.type,
-                    listCheckbox.text,
-                    index
-                )
-
-        .radio
-            label.radio__label Radio Buttons
-            each listRadio, index in radioState
-                +RadioBtn(
-                    listRadio.state,
-                    listRadio.type,
-                    listRadio.text,
-                    index
-                )
-
-        .toggle
-            label.toggle__label Toggle
-            each listToggle, index in toggleState
-                +ToggleBtn(
-                    listToggle.state,
-                    listToggle.type,
-                    listToggle.text,
-                    index
-                )
-
-        .like
-            label.like__label like button
-            each listLike, index in likeState
-                +LikeBtn(
-                    listLike.state,
-                    listLike.type,
-                    listLike.text,
-                    index
-                )
-
-        .rate
-            label.rate__label rate button
-            each listRate in rateState
-                +RateBtn(
-                    listRate.state,
-                    listRate.type,
-                    listRate.id,
-                    listRate.count
-                )
-    .interact
-        .range
-            each listRange in rangeState
-                +Range(
-                    listRange.label,
-                    listRange.state
-                )
-        .buttons-click
-            label.buttons-click__label Buttons
-            .buttons-click__wrapper
-                each listButtonClick in buttonClickState
-                    +ButtonClick(
-                        listButtonClick.context,
-                        listButtonClick.border,
-                        listButtonClick.state
+main.main
+    section.section
+        .container: .row
+            .inputs
+                // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
+                each listInputState in inputState
+                    +InputWithLabel(
+                        listInputState.label,
+                        listInputState.state,
+                        listInputState.placeholder,
+                        listInputState.text,
+                        listInputState.width
                     )
-        .buttons-link
-            .buttons-link__wrapper
-                each listButtonLinkClick in buttonLinkState
-                    +ButtonLink(
-                        listButtonLinkClick.context,
-                        listButtonLinkClick.href
+                each listDropdownState in dropdownState
+                    +SelectWithLabel(
+                        listDropdownState.label,
+                        listDropdownState.state,
+                        listDropdownState.text,
+                        listDropdownState.width
+                    )
+                each listMaskedState in maskedState
+                    +InputWithLabel(
+                        listMaskedState.label,
+                        listMaskedState.state,
+                        listMaskedState.placeholder,
+                        listMaskedState.text,
+                        listMaskedState.width
+                    )
+                each listDateState in dateState
+                    +SelectWithLabel(
+                        listDateState.label,
+                        listDateState.state,
+                        listDateState.text,
+                        listDateState.width
+                    )
+                each listFilterState in filterState
+                    +SelectWithLabel(
+                        listFilterState.label,
+                        listFilterState.state,
+                        listFilterState.text,
+                        listFilterState.width
+                    )
+                each listSubscriptionState in subscriptionState
+                    +SubscriptionWithLabel(
+                        listSubscriptionState.label,
+                        listSubscriptionState.state,
+                        listSubscriptionState.placeholder,
+                        listSubscriptionState.width
                     )
 
-        .buttons-icon
-            each listButtonIconClick in buttonIconState
-                +ButtonWithIcon(
-                    listButtonIconClick.context,
-                    listButtonIconClick.href
-                )
+            .buttons
+                .checkbox
+                    label.checkbox__label Checkbox Buttons
+                    each listCheckbox, index in checkboxState
+                        +CheckboxBtn(
+                            listCheckbox.state,
+                            listCheckbox.type,
+                            listCheckbox.text,
+                            index
+                        )
 
-        .pagination
-            label.pagination__label pagination
-            each listPagination in paginationState
-                +Pagination(
-                    listPagination.context,
-                    listPagination.href,
-                    listPagination.count
-                )
+                .radio
+                    label.radio__label Radio Buttons
+                    each listRadio, index in radioState
+                        +RadioBtn(
+                            listRadio.state,
+                            listRadio.type,
+                            listRadio.text,
+                            index
+                        )
 
+                .toggle
+                    label.toggle__label Toggle
+                    each listToggle, index in toggleState
+                        +ToggleBtn(
+                            listToggle.state,
+                            listToggle.type,
+                            listToggle.text,
+                            index
+                        )
+
+                .like
+                    label.like__label like button
+                    each listLike, index in likeState
+                        +LikeBtn(
+                            listLike.state,
+                            listLike.type,
+                            listLike.text,
+                            index
+                        )
+
+                .rate
+                    label.rate__label rate button
+                    each listRate in rateState
+                        +RateBtn(
+                            listRate.state,
+                            listRate.type,
+                            listRate.id,
+                            listRate.count
+                        )
+            .interact
+                .range
+                    each listRange in rangeState
+                        +Range(
+                            listRange.label,
+                            listRange.state
+                        )
+                .buttons-click
+                    label.buttons-click__label Buttons
+                    .buttons-click__wrapper
+                        each listButtonClick in buttonClickState
+                            +ButtonClick(
+                                listButtonClick.context,
+                                listButtonClick.border,
+                                listButtonClick.state
+                            )
+                .buttons-link
+                    .buttons-link__wrapper
+                        each listButtonLinkClick in buttonLinkState
+                            +ButtonLink(
+                                listButtonLinkClick.context,
+                                listButtonLinkClick.href
+                            )
+
+                .buttons-icon
+                    each listButtonIconClick in buttonIconState
+                        +ButtonWithIcon(
+                            listButtonIconClick.context,
+                            listButtonIconClick.href
+                        )
+
+                .pagination
+                    label.pagination__label pagination
+                    each listPagination in paginationState
+                        +Pagination(
+                            listPagination.context,
+                            listPagination.href,
+                            listPagination.inform
+                        )
+
+        .container: .row
+            .dropdown
+                .dropdown-room
+                    each listDropdownRoom in dropdownRoomState
+                        +SelectWithLabel(
+                            listDropdownRoom.label,
+                            listDropdownRoom.state,
+                            listDropdownRoom.text,
+                            listDropdownRoom.width,
+                            listDropdownRoom.description
+                        )

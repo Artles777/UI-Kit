@@ -122,6 +122,28 @@ $font-btn-arrow: 18px;
     background-clip: text;
     -webkit-background-clip: text;
   }
+
+  @if($color == dark-100 and $option == border) {
+    border: 1px solid $dark-shade-100;
+  }
+  @if($color == dark-75 and $option == border) {
+    border: 1px solid $dark-shade-75;
+  }
+  @if($color == dark-50 and $option == border) {
+    border: 1px solid $dark-shade-50;
+  }
+  @if($color == dark-25 and $option == border) {
+    border: 1px solid $dark-shade-25;
+  }
+  @if($color == dark-5 and $option == border) {
+    border: 1px solid $dark-shade-5;
+  }
+  @if($color == purple and $option == border) {
+    border: 1px solid $purple;
+  }
+  @if($color == green and $option == border) {
+    border: 1px solid $green;
+  }
 }
 
 @mixin opacity-theme($opacity: 100%) {
@@ -164,5 +186,13 @@ $font-btn-arrow: 18px;
     font-weight: 400;
     font-family: Montserrat;
     color: #FFFFFF;
+  }
+  @if($font == state) {
+    font-size: $font-h3;
+    font-weight: 400;
+    font-family: Montserrat;
+    color: rgba(31, 32, 65, 0.5);
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
   }
 }

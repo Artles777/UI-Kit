@@ -10,6 +10,7 @@
 @import "components/inputs";
 @import "components/buttons";
 @import "components/interact";
+@import "components/drowdown";
 
 body {
   font-family: Montserrat;
@@ -103,9 +104,9 @@ p {
   padding-bottom: 145px;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
-  &:not(:first-of-type) {
-    margin-top: 40px;
-  }
+  //&:not(:first-of-type) {
+  //  margin-top: 40px;
+  //}
 }
 
 .container {

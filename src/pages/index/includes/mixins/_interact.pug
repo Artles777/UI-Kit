@@ -25,7 +25,8 @@ mixin PaginationPage(context, href, index)
     li.pagination__page(class=`pagination__page_${index}`)
         a.pagination__link(href=`${href}` class=`pagination__link_${index}`) #{context}
 
-mixin Pagination(context, href)
+mixin Pagination(context, href, inform)
     ul.pagination__wrapper
         each listPage, index in context
             +PaginationPage(listPage, href, index)
+    p.pagination__inform #{inform}

@@ -1,0 +1,86 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "custom";
+
+.dropdown {
+  @include make-col-ready();
+  @include make-col(4);
+
+  margin-top: 78px;
+
+  &-room {
+
+    & .text-field {
+      margin-bottom: 16px;
+
+      &__wrapper {
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
+
+      &__list {
+        display: none;
+        position: absolute;
+        top: 90%;
+        width: inherit;
+        border-top: none !important;
+        z-index: 100000;
+        padding-bottom: 7px;
+        border-radius: 4px;
+
+        &_context {
+          @include font-theme(h3);
+
+          padding-left: 15px;
+          align-self: center;
+          margin-top: 13px;
+          margin-bottom: 9px;
+        }
+      }
+
+      &__counter {
+        @include font-theme(h3);
+
+        justify-self: center;
+        align-self: center;
+        margin-top: 5px;
+        line-height: 1.8rem;
+
+        &:before {
+          @include font-theme(arrow);
+          @include color-theme(dark-50, color);
+          @include color-theme(dark-25, border);
+
+          content: '-';
+          padding: 0.15rem 0.63rem;
+          border-radius: 50vh;
+          margin-left: 3px;
+          margin-right: 12px;
+          align-self: center;
+        }
+
+        &:last-of-type:before {
+          opacity: 0.38;
+        }
+
+        &:after {
+          @include font-theme(arrow);
+          @include color-theme(dark-50, color);
+          @include color-theme(dark-25, border);
+
+          content: '+';
+          padding: 0.15rem 0.55rem;
+          border-radius: 50vh;
+          margin-left: 14px;
+        }
+      }
+    }
+  }
+}
+
+.text-field__expanded {
+
+  .text-field__list {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 3fr 2fr;
+  }
+}
