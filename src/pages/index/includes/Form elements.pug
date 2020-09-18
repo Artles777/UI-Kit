@@ -3,487 +3,95 @@ include mixins/_buttons
 include mixins/_interact
 include mixins/_dropdown
 
--
-    store = [
-        inputState = [
-            {
-                label: 'Text Field',
-                state: 'Default',
-                placeholder: 'Email',
-                text: '',
-                width: 'large'
-            },
-            {
-                label: 'Text Field',
-                state: 'Hover / Focus',
-                placeholder: 'Email',
-                text: 'This is pretty awesome',
-                width: 'large'
-            },
-        ],
-
-        dropdownState = [
-            {
-                label: 'Dropdown',
-                state: 'Default',
-                text: 'Сколько гостей',
-                width: 'large'
-            },
-        ],
-
-        maskedState = [
-            {
-                label: 'masked text field',
-                state: 'Default',
-                placeholder: 'ДД.ММ.ГГГГ',
-                text: '',
-                width: 'large'
-            },
-        ],
-
-        dateState = [
-            {
-                label: 'date Dropdown',
-                state: '',
-                placeholder: '',
-                text: 'ДД.ММ.ГГГГ',
-                width: 'small'
-            },
-            {
-                label: 'date Dropdown',
-                state: '',
-                placeholder: '',
-                text: '19.08.2019',
-                width: 'small'
-            },
-        ],
-
-        filterState = [
-            {
-                label: 'filter date dropdown',
-                state: '',
-                placeholder: '',
-                text: '19 авг - 23 авг',
-                width: 'medium'
-            },
-        ],
-
-        subscriptionState = [
-            {
-                label: 'subscription text field',
-                state: '',
-                placeholder: 'Email',
-                width: 'medium'
-            },
-        ],
-
-        checkboxState = [
-            {
-                state: '',
-                type: 'checkbox',
-                text: 'Можно курить'
-            },
-            {
-                state: 'checked',
-                type: 'checkbox',
-                text: 'Можно с питомцами'
-            },
-            {
-                state: 'checked',
-                type: 'checkbox',
-                text: 'Можно пригласить гостей\n' +
-                        '(до 10 человек)'
-            }
-        ],
-
-        radioState = [
-            {
-                state: 'checked',
-                type: 'radio',
-                text: 'Мужчина'
-            },
-            {
-                state: '',
-                type: 'radio',
-                text: 'Женщина'
-            }
-        ],
-
-        toggleState = [
-            {
-                state: 'checked',
-                type: 'checkbox',
-                text: 'Получать спецпредложения'
-            },
-            {
-                state: '',
-                type: 'checkbox',
-                text: 'Получать спецпредложения'
-            }
-        ],
-
-        likeState = [
-            {
-                state: '',
-                type: 'checkbox',
-                text: '2'
-            },
-            {
-                state: 'checked',
-                type: 'checkbox',
-                text: '12'
-            }
-        ],
-
-        rateState = [
-            {
-                id: 1,
-                state: '',
-                type: 'radio',
-                count: 5
-            },
-            {
-                id: 2,
-                state: '',
-                type: 'radio',
-                count: 5
-            }
-        ],
-
-        rangeState = [
-            {
-                label: 'Range Slider',
-                state: '5 000₽ - 10 000₽',
-            }
-        ],
-
-        buttonClickState = [
-            {
-                context: 'click me',
-                border: '',
-                state: 'active',
-            },
-            {
-                context: 'click me',
-                border: '',
-                state: 'disable',
-            },
-            {
-                context: 'click me',
-                border: 'border',
-                state: 'active',
-            },
-            {
-                context: 'click me',
-                border: 'border',
-                state: 'disable',
-            },
-        ],
-
-        buttonLinkState = [
-            {
-                context: 'click me',
-                href: '#',
-            },
-            {
-                context: 'click me',
-                href: '#',
-            },
-        ],
-
-        buttonIconState = [
-            {
-                context: 'перейти к оплате',
-                href: '#',
-            },
-        ],
-
-        paginationState = [
-            {
-                context: [1, 2, 3, 15],
-                href: '#',
-                inform: '1 – 12 из 100+ вариантов аренды',
-            },
-        ],
-
-        dropdownRoomDefaultState = [
-            {
-                label: 'Dropdown',
-                state: 'Default',
-                text: '2 спальни, 2 кровати...',
-                width: 'medium',
-            },
-        ],
-
-        dropdownRoomExpendedState = [
-            {
-                label: 'Dropdown',
-                state: 'expanded',
-                text: '2 спальни, 2 кровати...',
-                width: 'medium',
-                description: [
-                    {
-                        text: 'спальни',
-                        counter: 2
-                    },
-                    {
-                        text: 'кровати',
-                        counter: 2
-                    },
-                    {
-                        text: 'ванные комнаты',
-                        counter: 0
-                    },
-                ],
-            },
-        ],
-
-        dropdownPeopleState = [
-            {
-                label: 'Dropdown',
-                state: '',
-                text: 'Сколько гостей',
-                width: 'large',
-                description: [
-                    {
-                        text: 'взрослые',
-                        counter: 0
-                    },
-                    {
-                        text: 'дети',
-                        counter: 0
-                    },
-                    {
-                        text: 'младенцы',
-                        counter: 0
-                    },
-                ],
-                buttons: [
-                    {
-                        context: 'Применить',
-                        href: '',
-                        index: 0
-                    },
-                ]
-            },
-        ]
-    ]
-
-    var dropdownPeopleClearState = [
-        {
-            label: 'Dropdown',
-            state: '',
-            text: '3 гостя',
-            width: 'large',
-            description: [
-                {
-                    text: 'взрослые',
-                    counter: 2
-                },
-                {
-                    text: 'дети',
-                    counter: 1
-                },
-                {
-                    text: 'младенцы',
-                    counter: 0
-                },
-            ],
-            buttons: [
-                {
-                    context: 'Применить',
-                    href: '',
-                    index: 0
-                },
-                {
-                    context: 'Очистить',
-                    href: '',
-                    index: 1
-                },
-            ]
-        },
-    ]
-
 main.main
     section.section
         .container: .row
             .inputs
-                // TextField(label, state, placeholder, text, display,  width={small:150px medium:266px large:320px})
-                each listInputState in inputState
-                    +InputWithLabel(
-                        listInputState.label,
-                        listInputState.state,
-                        listInputState.placeholder,
-                        listInputState.text,
-                        listInputState.width
-                    )
-                each listDropdownState in dropdownState
-                    +SelectWithLabel(
-                        listDropdownState.label,
-                        listDropdownState.state,
-                        listDropdownState.text,
-                        listDropdownState.width
-                    )
-                each listMaskedState in maskedState
-                    +InputWithLabel(
-                        listMaskedState.label,
-                        listMaskedState.state,
-                        listMaskedState.placeholder,
-                        listMaskedState.text,
-                        listMaskedState.width
-                    )
-                each listDateState in dateState
-                    +SelectWithLabel(
-                        listDateState.label,
-                        listDateState.state,
-                        listDateState.text,
-                        listDateState.width
-                    )
-                each listFilterState in filterState
-                    +SelectWithLabel(
-                        listFilterState.label,
-                        listFilterState.state,
-                        listFilterState.text,
-                        listFilterState.width
-                    )
-                each listSubscriptionState in subscriptionState
-                    +SubscriptionWithLabel(
-                        listSubscriptionState.label,
-                        listSubscriptionState.state,
-                        listSubscriptionState.placeholder,
-                        listSubscriptionState.width
-                    )
+                // This module contains text field for input email address
+                include mixins/modules-form-elements/_input.modules.pug
+
+                // This module contains select field with a choice of guests
+                include mixins/modules-form-elements/_dropdown.modules.pug
+
+                // This module contains text field with enter a dd/mm/yyyy
+                include mixins/modules-form-elements/_masked.modules.pug
+
+                // This module contains select field with enter a date
+                include mixins/modules-form-elements/_date.modules.pug
+
+                // This module contains select field with a date filtering
+                include mixins/modules-form-elements/_filterDate.module.pug
+
+                // This module contains text field for newsletter subscription
+                include mixins/modules-form-elements/_subscription.module.pug
 
             .buttons
                 .checkbox
                     label.checkbox__label Checkbox Buttons
-                    each listCheckbox, index in checkboxState
-                        +CheckboxBtn(
-                            listCheckbox.state,
-                            listCheckbox.type,
-                            listCheckbox.text,
-                            index
-                        )
+                    // This module contains a checkbox buttons
+                    include mixins/modules-form-elements/_checkbox.module.pug
 
                 .radio
                     label.radio__label Radio Buttons
-                    each listRadio, index in radioState
-                        +RadioBtn(
-                            listRadio.state,
-                            listRadio.type,
-                            listRadio.text,
-                            index
-                        )
+                    // This module contains a radio buttons
+                    include mixins/modules-form-elements/_radio.module.pug
 
                 .toggle
                     label.toggle__label Toggle
-                    each listToggle, index in toggleState
-                        +ToggleBtn(
-                            listToggle.state,
-                            listToggle.type,
-                            listToggle.text,
-                            index
-                        )
+                    // This module contains a toggle buttons
+                    include mixins/modules-form-elements/_toggle.module.pug
 
                 .like
                     label.like__label like button
-                    each listLike, index in likeState
-                        +LikeBtn(
-                            listLike.state,
-                            listLike.type,
-                            listLike.text,
-                            index
-                        )
+                    // This module contains a like buttons
+                    include mixins/modules-form-elements/_like.module.pug
 
                 .rate
                     label.rate__label rate button
-                    each listRate in rateState
-                        +RateBtn(
-                            listRate.state,
-                            listRate.type,
-                            listRate.id,
-                            listRate.count
-                        )
+                    // This module contains a rate buttons
+                    include mixins/modules-form-elements/_rate.module.pug
+
             .interact
                 .range
-                    each listRange in rangeState
-                        +Range(
-                            listRange.label,
-                            listRange.state
-                        )
+                    // This module contains a range slider
+                    include mixins/modules-form-elements/_range.module.pug
+
                 .buttons-click
                     label.buttons-click__label buttons
-                    .buttons-click__wrapper
-                        each listButtonClick in buttonClickState
-                            +ButtonClick(
-                                listButtonClick.context,
-                                listButtonClick.border,
-                                listButtonClick.state
-                            )
+                    // This module contains a small buttons with title CLICK ME
+                    include mixins/modules-form-elements/_buttonClick.module.pug
+
                 .buttons-link
-                    .buttons-link__wrapper
-                        each listButtonLinkClick, index in buttonLinkState
-                            +ButtonLink(
-                                listButtonLinkClick.context,
-                                listButtonLinkClick.href,
-                                index
-                            )
+                    // This module contains a clicking links
+                    include mixins/modules-form-elements/_buttonLink.module.pug
 
                 .buttons-icon
-                    each listButtonIconClick in buttonIconState
-                        +ButtonWithIcon(
-                            listButtonIconClick.context,
-                            listButtonIconClick.href
-                        )
+                    // This module contains a large button with the transition to payment
+                    include mixins/modules-form-elements/_buttonIcon.module.pug
 
                 .pagination
                     label.pagination__label pagination
-                    each listPagination in paginationState
-                        +Pagination(
-                            listPagination.context,
-                            listPagination.href,
-                            listPagination.inform
-                        )
+                    // This module contains a pagination pages
+                    include mixins/modules-form-elements/_pagination.module.pug
 
         .container: .row
             .dropdown
                 .dropdown-room
-                     each listDropdownDefault in dropdownRoomDefaultState
-                         +SelectWithLabel(
-                             listDropdownDefault.label,
-                             listDropdownDefault.state,
-                             listDropdownDefault.text,
-                             listDropdownDefault.width
-                         )
-                     each listDropdownExpended in dropdownRoomExpendedState
-                         +DropdownWithLabel(
-                             listDropdownExpended.label,
-                             listDropdownExpended.state,
-                             listDropdownExpended.text,
-                             listDropdownExpended.width,
-                             listDropdownExpended.description
-                          )
+                    // This module contains a hidden and revealed dropdown
+                    include mixins/modules-form-elements/_dropdownDefault.module.pug
 
             .dropdown
                 .dropdown-room
-                    each listDropdownPeople in dropdownPeopleState
-                        +DropdownWithBtn(
-                            listDropdownPeople.label,
-                            listDropdownPeople.state,
-                            listDropdownPeople.text,
-                            listDropdownPeople.width,
-                            listDropdownPeople.description,
-                            listDropdownPeople.buttons
-                        )
+                    // This module contains revealed dropdown with a choice number of guests
+                    // and one button the Apply
+                    include mixins/modules-form-elements/_dropdownPeople.module.pug
 
             .dropdown
                 .dropdown-room
-                    each listDropdownClearPeople in dropdownPeopleClearState
-                        +DropdownWithBtn(
-                            listDropdownClearPeople.label,
-                            listDropdownClearPeople.state,
-                            listDropdownClearPeople.text,
-                            listDropdownClearPeople.width,
-                            listDropdownClearPeople.description,
-                            listDropdownClearPeople.buttons
-                        )
+                    // This module contains revealed dropdown with a choice number of guests
+                    // and two buttons the Apply and the Clear
+                    include mixins/modules-form-elements/_dropdownClear.module.pug
+
+        .container: .row
+            .list-group
+                .checkbox-list

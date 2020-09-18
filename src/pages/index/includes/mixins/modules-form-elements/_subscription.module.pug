@@ -1,0 +1,17 @@
+-
+    var subscriptionState = [
+        {
+            label: 'subscription text field',
+            state: '',
+            placeholder: 'Email',
+            width: 'medium'
+        },
+    ]
+
+each listSubscriptionState in subscriptionState
+    +SubscriptionWithLabel(
+        listSubscriptionState.label,
+        listSubscriptionState.state,
+        listSubscriptionState.placeholder,
+        listSubscriptionState.width
+    )

@@ -1,0 +1,26 @@
+-
+    var inputState = [
+        {
+            label: 'Text Field',
+            state: 'Default',
+            placeholder: 'Email',
+            text: '',
+            width: 'large'
+        },
+        {
+            label: 'Text Field',
+            state: 'Hover / Focus',
+            placeholder: 'Email',
+            text: 'This is pretty awesome',
+            width: 'large'
+        },
+    ]
+
+each listInputState in inputState
+    +InputWithLabel(
+        listInputState.label,
+        listInputState.state,
+        listInputState.placeholder,
+        listInputState.text,
+        listInputState.width
+    )

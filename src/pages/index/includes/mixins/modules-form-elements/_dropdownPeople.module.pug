@@ -1,0 +1,40 @@
+-
+    var dropdownPeopleState = [
+        {
+            label: 'Dropdown',
+            state: '',
+            text: 'Сколько гостей',
+            width: 'large',
+            description: [
+                {
+                    text: 'взрослые',
+                    counter: 0
+                },
+                {
+                    text: 'дети',
+                    counter: 0
+                },
+                {
+                    text: 'младенцы',
+                    counter: 0
+                },
+            ],
+            buttons: [
+                {
+                    context: 'Применить',
+                    href: '',
+                    index: 0
+                },
+            ]
+        },
+    ]
+
+each listDropdownPeople in dropdownPeopleState
+    +DropdownWithBtn(
+        listDropdownPeople.label,
+        listDropdownPeople.state,
+        listDropdownPeople.text,
+        listDropdownPeople.width,
+        listDropdownPeople.description,
+        listDropdownPeople.buttons
+    )

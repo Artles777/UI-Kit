@@ -1,0 +1,48 @@
+-
+    var dropdownRoomDefaultState = [
+        {
+            label: 'Dropdown',
+            state: 'Default',
+            text: '2 спальни, 2 кровати...',
+            width: 'medium',
+        },
+    ]
+
+    var dropdownRoomExpendedState = [
+        {
+            label: 'Dropdown',
+            state: 'expanded',
+            text: '2 спальни, 2 кровати...',
+            width: 'medium',
+            description: [
+                {
+                    text: 'спальни',
+                    counter: 2
+                },
+                {
+                    text: 'кровати',
+                    counter: 2
+                },
+                {
+                    text: 'ванные комнаты',
+                    counter: 0
+                },
+            ],
+        },
+    ]
+
+each listDropdownDefault in dropdownRoomDefaultState
+    +SelectWithLabel(
+        listDropdownDefault.label,
+        listDropdownDefault.state,
+        listDropdownDefault.text,
+        listDropdownDefault.width
+    )
+each listDropdownExpended in dropdownRoomExpendedState
+    +DropdownWithLabel(
+        listDropdownExpended.label,
+        listDropdownExpended.state,
+        listDropdownExpended.text,
+        listDropdownExpended.width,
+        listDropdownExpended.description
+    )

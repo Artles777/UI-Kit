@@ -1,0 +1,18 @@
+-
+    var filterState = [
+        {
+            label: 'filter date dropdown',
+            state: '',
+            placeholder: '',
+            text: '19 авг - 23 авг',
+            width: 'medium'
+        },
+    ]
+
+each listFilterState in filterState
+    +SelectWithLabel(
+        listFilterState.label,
+        listFilterState.state,
+        listFilterState.text,
+        listFilterState.width
+    )

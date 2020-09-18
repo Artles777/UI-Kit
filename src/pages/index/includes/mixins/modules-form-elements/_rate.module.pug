@@ -1,0 +1,23 @@
+-
+    var rateState = [
+        {
+            id: 1,
+            state: '',
+            type: 'radio',
+            count: 5
+        },
+        {
+            id: 2,
+            state: '',
+            type: 'radio',
+            count: 5
+        }
+    ]
+
+each listRate in rateState
+    +RateBtn(
+        listRate.state,
+        listRate.type,
+        listRate.id,
+        listRate.count
+    )

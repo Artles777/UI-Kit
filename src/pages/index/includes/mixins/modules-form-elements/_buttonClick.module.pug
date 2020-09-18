@@ -1,0 +1,30 @@
+-
+    var buttonClickState = [
+        {
+            context: 'click me',
+            border: '',
+            state: 'active',
+        },
+        {
+            context: 'click me',
+            border: '',
+            state: 'disable',
+        },
+        {
+            context: 'click me',
+            border: 'border',
+            state: 'active',
+        },
+        {
+            context: 'click me',
+            border: 'border',
+            state: 'disable',
+        },
+    ]
+
+each listButtonClick in buttonClickState
+    +ButtonClick(
+        listButtonClick.context,
+        listButtonClick.border,
+        listButtonClick.state
+    )

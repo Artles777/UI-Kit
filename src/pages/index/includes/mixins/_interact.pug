@@ -9,12 +9,15 @@ mixin Range(label, state)
 
 mixin ButtonClick(context, border, state)
     if (border === '')
-        button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
+        .buttons-click__wrapper
+            button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
     else if (border === 'border')
-        button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
+        .buttons-click__wrapper
+            button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
 
 mixin ButtonLink(context, href, index)
-    a.buttons-link__link(class=`buttons-link__link_${index}` href=`${href ? href : '#'}`)= context
+    .buttons-link__wrapper
+        a.buttons-link__link(class=`buttons-link__link_${index}` href=`${href ? href : '#'}`)= context
 
 mixin ButtonWithIcon(context, href)
     .buttons-icon__wrapper

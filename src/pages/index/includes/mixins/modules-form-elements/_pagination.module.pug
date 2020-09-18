@@ -1,0 +1,15 @@
+-
+    var paginationState = [
+        {
+            context: [1, 2, 3, 15],
+            href: '#',
+            inform: '1 – 12 из 100+ вариантов аренды',
+        },
+    ]
+
+each listPagination in paginationState
+    +Pagination(
+        listPagination.context,
+        listPagination.href,
+        listPagination.inform
+    )

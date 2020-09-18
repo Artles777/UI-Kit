@@ -1,0 +1,18 @@
+-
+    var buttonLinkState = [
+        {
+            context: 'click me',
+            href: '#',
+        },
+        {
+            context: 'click me',
+            href: '#',
+        },
+    ]
+
+each listButtonLinkClick, index in buttonLinkState
+    +ButtonLink(
+        listButtonLinkClick.context,
+        listButtonLinkClick.href,
+        index
+    )

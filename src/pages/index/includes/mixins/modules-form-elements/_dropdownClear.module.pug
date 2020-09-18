@@ -1,0 +1,45 @@
+-
+    var dropdownPeopleClearState = [
+        {
+            label: 'Dropdown',
+            state: '',
+            text: '3 гостя',
+            width: 'large',
+            description: [
+                {
+                    text: 'взрослые',
+                    counter: 2
+                },
+                {
+                    text: 'дети',
+                    counter: 1
+                },
+                {
+                    text: 'младенцы',
+                    counter: 0
+                },
+            ],
+            buttons: [
+                {
+                    context: 'Применить',
+                    href: '',
+                    index: 0
+                },
+                {
+                    context: 'Очистить',
+                    href: '',
+                    index: 1
+                },
+            ]
+        },
+    ]
+
+each listDropdownClear in dropdownPeopleClearState
+    +DropdownWithBtn(
+        listDropdownClear.label,
+        listDropdownClear.state,
+        listDropdownClear.text,
+        listDropdownClear.width,
+        listDropdownClear.description,
+        listDropdownClear.buttons
+    )

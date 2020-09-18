@@ -1,0 +1,19 @@
+-
+    var maskedState = [
+        {
+            label: 'masked text field',
+            state: 'Default',
+            placeholder: 'ДД.ММ.ГГГГ',
+            text: '',
+            width: 'large'
+        },
+    ]
+
+each listMaskedState in maskedState
+    +InputWithLabel(
+        listMaskedState.label,
+        listMaskedState.state,
+        listMaskedState.placeholder,
+        listMaskedState.text,
+        listMaskedState.width
+    )

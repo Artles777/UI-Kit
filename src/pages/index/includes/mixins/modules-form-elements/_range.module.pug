@@ -1,0 +1,13 @@
+-
+    var rangeState = [
+        {
+            label: 'Range Slider',
+            state: '5 000₽ - 10 000₽',
+        }
+    ]
+
+each listRange in rangeState
+    +Range(
+        listRange.label,
+        listRange.state
+    )

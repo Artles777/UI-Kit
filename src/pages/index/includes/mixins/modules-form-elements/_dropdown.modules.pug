@@ -1,0 +1,19 @@
+-
+    var dropdownState = [
+        {
+            label: 'Dropdown',
+            state: 'Default',
+            text: 'Сколько гостей',
+            width: 'large'
+        },
+    ]
+
+each listDropdownState in dropdownState
+    +SelectWithLabel(
+        listDropdownState.label,
+        listDropdownState.state,
+        listDropdownState.text,
+        listDropdownState.width
+    )
+
+

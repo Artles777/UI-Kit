@@ -1,0 +1,21 @@
+-
+    var toggleState = [
+        {
+            state: 'checked',
+            type: 'checkbox',
+            text: 'Получать спецпредложения'
+        },
+        {
+            state: '',
+            type: 'checkbox',
+            text: 'Получать спецпредложения'
+        }
+    ]
+
+each listToggle, index in toggleState
+    +ToggleBtn(
+        listToggle.state,
+        listToggle.type,
+        listToggle.text,
+        index
+    )

@@ -1,0 +1,13 @@
+-
+    var buttonIconState = [
+        {
+            context: 'перейти к оплате',
+            href: '#',
+        },
+    ]
+
+each listButtonIconClick in buttonIconState
+    +ButtonWithIcon(
+        listButtonIconClick.context,
+        listButtonIconClick.href
+    )
