@@ -1,0 +1,36 @@
+include _inputs
+include _interact
+
+mixin CounterContext(description)
+    p.text-field__list_context #{description.text}
+    span.text-field__counter(class=`text-field__counter_${description.counter}`) #{description.counter}
+
+mixin Dropdown(text, width, description)
+    +Select(text, width)
+    .text-field__list
+        each listDescription in description
+            +CounterContext(listDescription)
+
+mixin DropdownBtn(text, width, description, buttons)
+    +Select(text, width)
+    .text-field__list
+        each listDescription in description
+            +CounterContext(listDescription)
+        each listButtons in buttons
+            +ButtonLink(listButtons.context, listButtons.href, listButtons.index)
+
+mixin DropdownWithBtn(label, state, text, width, description, buttons)
+    .text-field(class=`text-field__${width} text-field__${state ? state : 'expanded'}`)
+        label.text-field__label= label
+        if state !== ''
+            span.text-field__state= state
+        +DropdownBtn(text, width, description, buttons)
+
+
+mixin DropdownWithLabel(label, state, text, width, description)
+    .text-field(class=`text-field__${width} text-field__${state ? state : 'expanded'}`)
+        label.text-field__label= label
+        if state !== ''
+            span.text-field__state= state
+        +Dropdown(text, width, description)
+

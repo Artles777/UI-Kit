@@ -140,18 +140,21 @@
 
   &__link {
     @include font-theme(h3);
-    @include color-theme(purple, color);
 
-    &:hover {
+    &_0 {
+      @include color-theme(purple, color);
+
+      &:hover {
+        @include color-theme(purple, color);
+      }
+    }
+
+    &_1 {
       @include color-theme(dark-50, color);
     }
 
     &:first-child {
       padding-right: 20px;
-    }
-
-    &:last-child {
-      @include color-theme(dark-50, color);
     }
   }
 }

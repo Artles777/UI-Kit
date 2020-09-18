@@ -13,12 +13,12 @@ mixin ButtonClick(context, border, state)
     else if (border === 'border')
         button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
 
-mixin ButtonLink(context, href)
-    a.buttons-link__link(href=`${href}`)= context
+mixin ButtonLink(context, href, index)
+    a.buttons-link__link(class=`buttons-link__link_${index}` href=`${href ? href : '#'}`)= context
 
 mixin ButtonWithIcon(context, href)
     .buttons-icon__wrapper
-        a.buttons-icon__link(href=`${href}`) #{context}
+        a.buttons-icon__link(href=`${href ? href : '#'}`) #{context}
         i.buttons-icon__icon.icon-right
 
 mixin PaginationPage(context, href, index)

@@ -1,50 +1,33 @@
-mixin CounterContext(description)
-    p.text-field__list_context #{description.text}
-    span.text-field__counter #{description.counter}
-
 mixin Input(placeholder, text, width)
-    .text-field__wrapper(class=width)
+    .text-field__wrapper(class=`text-field__${width}`)
         input.text-field__input(placeholder=`${placeholder}` value=`${text}`)
 
 mixin Select(text, width)
-    .text-field__wrapper(class=width)
+    .text-field__wrapper(class=`text-field__${width}`)
         div.text-field__dropdown_field= text
         span.text-field__dropdown_icon.icon-down-open
 
-mixin Dropdown(text, width, description)
-    +Select(text, width)
-    .text-field__list
-        each listDescription in description
-            +CounterContext(listDescription)
-
 mixin Subscription(placeholder, text, width)
-    .text-field__wrapper(class=width)
+    .text-field__wrapper(class=`text-field__${width}`)
         input.text-field__input(placeholder=`${placeholder}`)
         span.text-field__btn.icon-right
 
 mixin InputWithLabel(label, state, placeholder, text, width)
-    .text-field(class=width)
+    .text-field(class=`text-field__${width}`)
         label.text-field__label= label
         if state !== ''
             span.text-field__state= state
         +Input(placeholder, text, width)
 
 mixin SelectWithLabel(label, state, text, width, description)
-        if state === 'expanded'
-            .text-field(class=`${width} text-field__${state}`)
-                label.text-field__label= label
-                if state !== ''
-                    span.text-field__state= state
-                +Dropdown(text, width, description)
-        else
-            .text-field(class=width)
-                label.text-field__label= label
-                if state !== ''
-                    span.text-field__state= state
-                +Select(text, width)
+        .text-field(class=`text-field__${width}`)
+            label.text-field__label= label
+            if state !== ''
+                span.text-field__state= state
+            +Select(text, width)
 
 mixin SubscriptionWithLabel(label, state, placeholder, width)
-    .text-field(class=width)
+    .text-field(class=`text-field__${width}`)
         label.text-field__label= label
         if state !== ''
             span.text-field__state= state
