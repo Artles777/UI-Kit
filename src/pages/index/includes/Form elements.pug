@@ -58,12 +58,14 @@ main.main
 
                 .buttons-click
                     label.buttons-click__label buttons
-                    // This module contains a small buttons with title CLICK ME
-                    include mixins/modules-form-elements/_buttonClick.module.pug
+                    .buttons-click__wrapper
+                        // This module contains a small buttons with title CLICK ME
+                        include mixins/modules-form-elements/_buttonClick.module.pug
 
                 .buttons-link
-                    // This module contains a clicking links
-                    include mixins/modules-form-elements/_buttonLink.module.pug
+                    .buttons-link__wrapper
+                        // This module contains a clicking links
+                        include mixins/modules-form-elements/_buttonLink.module.pug
 
                 .buttons-icon
                     // This module contains a large button with the transition to payment
