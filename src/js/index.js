@@ -9,8 +9,8 @@ import pagination from "./modules/pagination";
 
 // Use only in the UI kit
 window.addEventListener('DOMContentLoaded', () => {
-    searchRate('rate1_1');
-    searchRate('rate2_0');
+    searchRate('rate_1_1');
+    searchRate('rate_2_0');
     borderActive('.text-field__input');
     pagination(
         '.pagination__wrapper',

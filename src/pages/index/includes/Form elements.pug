@@ -2,6 +2,7 @@ include mixins/_inputs
 include mixins/_buttons
 include mixins/_interact
 include mixins/_dropdown
+include mixins/_listGroup
 
 main.main
     section.section
@@ -96,4 +97,13 @@ main.main
 
         .container: .row
             .list-group
-                .checkbox-list
+                // This module contains list of accessories from expandable checkbox list
+                include mixins/modules-form-elements/_checkboxList.module.pug
+
+            .list-group
+                // This module contains a Rich Checkbox Buttons
+                include mixins/modules-form-elements/_richCheckbox.module.pug
+
+            .list-group
+                // This module contains bullet list
+                include mixins/modules-form-elements/_bulletList.module.pug

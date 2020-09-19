@@ -97,13 +97,8 @@
     }
 
     &_icon {
-      position: absolute;
-      pointer-events: none;
-      margin-right: 12px;
-      font-size: 13px;
-      color: rgba(31, 32, 65, 0.5);
-      right: 0;
-      z-index: 1;
+      @include color-theme(dark-50, color);
+      @include font-theme(icon);
     }
   }
 

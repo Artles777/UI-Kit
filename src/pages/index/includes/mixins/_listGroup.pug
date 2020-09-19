@@ -1,0 +1,25 @@
+mixin CheckboxList(content, width, state, type, text)
+    if state === 'active'
+        .checkbox-list(class=`text-field__${width} checkbox-list__${state}`)
+            p.checkbox-list__content #{content}
+            span.checkbox-list__icon.icon-down-open
+            each listBtn, index in text
+                +CheckboxBtn(listBtn.state, type, listBtn.text, index)
+    else
+        .checkbox-list(class=`text-field__${width}`)
+            p.checkbox-list__content #{content}
+            span.checkbox-list__icon.icon-down-open
+
+mixin RichCheckbox(context, width, type, button)
+    .checkbox-rich(class=`text-field__${width}`)
+        p.checkbox-rich__content #{context}
+        each listButton, index in button
+            +CheckboxBtn(listButton.state, type, listButton.text, index)
+            p.checkbox-rich__subtitle #{listButton.subtitle}
+
+mixin BulletList(context, width, list)
+    .bullet-list
+        p.bullet-list__content #{context}
+        ul.bullet-list__menu
+            each listBullet in list
+                li.bullet-list__item #{listBullet}

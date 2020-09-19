@@ -1,46 +1,46 @@
 mixin CheckboxBtn(state, type, text, index)
     .checkbox__item
         if state
-            input.checkbox__input(type=`${type}` id=`${type}_${index}` checked)
-            label.checkbox__content(for=`${type}_${index}`)= text
+            input.checkbox__input(type=`${type}` id=`${type}_${text}_${index}` checked)
+            label.checkbox__content(for=`${type}_${text}_${index}`)= text
         else
-            input.checkbox__input(type=`${type}` id=`${type}_${index}`)
-            label.checkbox__content(for=`${type}_${index}`)= text
+            input.checkbox__input(type=`${type}` id=`${type}_${text}_${index}`)
+            label.checkbox__content(for=`${type}_${text}_${index}`)= text
 
 mixin RadioBtn(state, type, text, index)
     .radio__item
         if state
-            input.radio__input(type=`${type}` id=`${type}_${index}` name=`${type}` checked)
-            label.radio__content(for=`${type}_${index}`)= text
+            input.radio__input(type=`${type}` id=`${type}_${text}_${index}` name=`${type}` checked)
+            label.radio__content(for=`${type}_${text}_${index}`)= text
         else
-            input.radio__input(type=`${type}` id=`${type}_${index}` name=`${type}`)
-            label.radio__content(for=`${type}_${index}`)= text
+            input.radio__input(type=`${type}` id=`${type}_${text}_${index}` name=`${type}`)
+            label.radio__content(for=`${type}_${text}_${index}`)= text
 
 mixin ToggleBtn(state, type, text, index)
     .toggle__item
         if state
-            input.toggle__input(type=`${type}` id=`toggle_${index}` checked)
-            label.toggle__content(for=`toggle_${index}`)= text
+            input.toggle__input(type=`${type}` id=`toggle_${text}_${index}` checked)
+            label.toggle__content(for=`toggle_${text}_${index}`)= text
         else
-            input.toggle__input(type=`${type}` id=`toggle_${index}`)
-            label.toggle__content(for=`toggle_${index}`)= text
+            input.toggle__input(type=`${type}` id=`toggle_${text}_${index}`)
+            label.toggle__content(for=`toggle_${text}_${index}`)= text
 
 mixin LikeBtn(state, type, text, index)
     .like__item
         if state
-            input.like__input(type=`${type}` id=`like_${index}` name=`${type}` checked)
-            label.like__content(for=`like_${index}`)= text
+            input.like__input(type=`${type}` id=`like_${text}_${index}` name=`like_${type}` checked)
+            label.like__content(for=`like_${text}_${index}`)= text
         else
-            input.like__input(type=`${type}` id=`like_${index}` name=`${type}`)
-            label.like__content(for=`like_${index}`)= text
+            input.like__input(type=`${type}` id=`like_${text}_${index}` name=`like_${type}`)
+            label.like__content(for=`like_${text}_${index}`)= text
 
 mixin Star(state, type, id, index)
         if state
-            input.rate__input(type=`${type}` id=`rate${id}_${index}` name=`rate${id}` checked)
+            input.rate__input(type=`${type}` id=`rate_${id}_${index}` name=`rate_${id}` checked)
             label.rate__content(for=`rate${id}_${index}`)
         else
-            input.rate__input(type=`${type}` id=`rate${id}_${index}` name=`rate${id}`)
-            label.rate__content(for=`rate${id}_${index}`)
+            input.rate__input(type=`${type}` id=`rate_${id}_${index}` name=`rate_${id}`)
+            label.rate__content(for=`rate_${id}_${index}`)
 
 mixin RateBtn(state, type, id, count)
     .rate__item

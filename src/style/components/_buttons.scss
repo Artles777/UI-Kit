@@ -32,6 +32,7 @@
 
   &__item {
     display: flex;
+    position: relative;
 
     // original checkbox
 
@@ -52,11 +53,11 @@
       position: absolute;
       content: '';
       display: inline-block;
-      left: -1.9rem;
     }
 
     & label::before {
       top: 1px;
+      margin-left: -1.9rem;
       border: 1px solid rgba(31, 32, 65, 0.25);
       border-radius: 4px;
       width: 1.25rem;

@@ -1,0 +1,20 @@
+-
+    var bulletListState = [
+        {
+            context: 'bullet list',
+            width: 'medium',
+            list: [
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00,\n' +
+                'а выезд до 12:00',
+            ]
+        }
+    ]
+
+each listBulletList in bulletListState
+    +BulletList(
+            listBulletList.context,
+            listBulletList.width,
+            listBulletList.list
+    )

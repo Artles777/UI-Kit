@@ -195,4 +195,19 @@ $font-btn-arrow: 18px;
     letter-spacing: -0.01em;
     text-transform: uppercase;
   }
+  @if($font == icon) {
+    position: absolute;
+    pointer-events: none;
+    margin-right: 12px;
+    font-size: 13px;
+    right: 0;
+    z-index: 1;
+  }
+  @if($font == subtitle) {
+    font-size: $font-h3;
+    font-weight: 400;
+    font-family: Montserrat;
+    color: rgba(31, 32, 65, 0.5);
+    line-height: 0.9rem;
+  }
 }
