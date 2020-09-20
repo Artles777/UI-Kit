@@ -1,0 +1,20 @@
+-
+    var advantagesDescState = [
+        {
+            title: 'Комфорт',
+            subtitle: 'Шумопоглощающие стены',
+            icon: 'mood'
+        },
+        {
+            title: 'Удобство',
+            subtitle: 'Окно в каждой из спален',
+            icon: 'location_city'
+        }
+    ]
+
+each listAdvantagesDescription in advantagesDescState
+    +Advantages(
+            listAdvantagesDescription.title,
+            listAdvantagesDescription.subtitle,
+            listAdvantagesDescription.icon
+    )

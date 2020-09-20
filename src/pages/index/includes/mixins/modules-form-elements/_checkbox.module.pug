@@ -2,17 +2,14 @@
     var checkboxState = [
         {
             state: '',
-            type: 'checkbox',
             text: 'Можно курить'
         },
         {
             state: 'checked',
-            type: 'checkbox',
             text: 'Можно с питомцами'
         },
         {
             state: 'checked',
-            type: 'checkbox',
             text: 'Можно пригласить гостей\n' +
                     '(до 10 человек)'
         }
@@ -21,7 +18,6 @@
 each listCheckbox, index in checkboxState
     +CheckboxBtn(
         listCheckbox.state,
-        listCheckbox.type,
         listCheckbox.text,
         index
     )

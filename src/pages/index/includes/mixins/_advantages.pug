@@ -1,0 +1,15 @@
+include _buttons
+
+mixin Advantages(title, subtitle, icon)
+    .advantages-desc
+        span.advantages-desc__icon.material-icons #{icon}
+        p.advantages-desc__title #{title}
+        p.advantages-desc__subtitle #{subtitle}
+
+mixin Comments(name, visit, description, srcName, state, count, index)
+    .comment
+        img.comment__image(src=require(`../../img/${srcName}`) alt=name)
+        p.comment__name #{name}
+        p.comment__visit #{visit}
+        +LikeBtn(state, count, index)
+        p.comment__description #{description}

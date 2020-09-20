@@ -1,0 +1,111 @@
+@import "~bootstrap/scss/bootstrap-reboot";
+@import "custom";
+
+.advantages {
+  @include make-col-ready();
+  @include make-col(3);
+}
+
+.advantages-desc {
+  display: grid;
+  grid-template: 1fr 1fr / 1.15fr 4fr;
+  grid-template-areas:
+    'icon title'
+    'icon subtitle'
+    'border border';
+
+  &:after {
+    @include size(107%, 1px);
+
+    content: '';
+    background: rgba(31, 32, 65, 0.1);
+    margin-top: 20px;
+    margin-bottom: 21px;
+    grid-area: border;
+  }
+
+  &__icon {
+    @include color-theme(liner-purple, color);
+
+    grid-area: icon;
+    font-size: 46px;
+  }
+
+  &__title {
+    @include font-theme(body);
+
+    font-weight: 700;
+    grid-area: title;
+  }
+
+  &__subtitle {
+    @include font-theme(body);
+
+    grid-area: subtitle;
+    margin-top: 2px;
+  }
+}
+
+.comments {
+  @include make-col-ready();
+  @include make-col(8);
+  @include make-col-offset(1);
+}
+
+.comment {
+  display: grid;
+  grid-template: 1.5fr 2.1fr 4fr / 1.6fr 10fr;
+  grid-template-areas:
+    'img name'
+    'img visit'
+    'btn desc';
+  margin-top: 10px;
+
+  &__image {
+    @include size(48px);
+
+    border-radius: 50vh;
+    border: 2px solid #FFFFFF;
+    filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.1));
+    justify-self: end;
+    margin-right: 10px;
+    grid-area: img;
+  }
+
+  &__name {
+    @include font-theme(body);
+
+    font-weight: 700;
+    grid-area: name;
+  }
+
+  &__visit {
+    @include font-theme(body);
+
+    grid-area: visit;
+  }
+
+  &__description {
+    grid-area: desc;
+    white-space: pre;
+    line-height: 1.4rem;
+  }
+
+  .like {
+
+    &__item {
+      grid-area: btn;
+      position: relative;
+      justify-self: end;
+      margin-right: 5px;
+    }
+
+    &__input {
+      opacity: 0;
+    }
+
+    &__content {
+      position: relative;
+    }
+  }
+}

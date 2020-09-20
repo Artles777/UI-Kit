@@ -3,6 +3,7 @@ include mixins/_buttons
 include mixins/_interact
 include mixins/_dropdown
 include mixins/_listGroup
+include mixins/_advantages
 
 main.main
     section.section
@@ -25,6 +26,7 @@ main.main
 
                 // This module contains text field for newsletter subscription
                 include mixins/modules-form-elements/_subscription.module.pug
+
 
             .buttons
                 .checkbox
@@ -52,6 +54,7 @@ main.main
                     // This module contains a rate buttons
                     include mixins/modules-form-elements/_rate.module.pug
 
+
             .interact
                 .range
                     // This module contains a range slider
@@ -77,6 +80,7 @@ main.main
                     // This module contains a pagination pages
                     include mixins/modules-form-elements/_pagination.module.pug
 
+
         .container: .row
             .dropdown
                 .dropdown-room
@@ -95,6 +99,7 @@ main.main
                     // and two buttons the Apply and the Clear
                     include mixins/modules-form-elements/_dropdownClear.module.pug
 
+
         .container: .row
             .list-group
                 // This module contains list of accessories from expandable checkbox list
@@ -107,3 +112,13 @@ main.main
             .list-group
                 // This module contains bullet list
                 include mixins/modules-form-elements/_bulletList.module.pug
+
+
+        .container: .row
+            .advantages
+                // This module contains section with two advantages
+                include mixins/modules-form-elements/_advantages.module.pug
+
+            .comments
+                // This module contains section with one comment
+                include mixins/modules-form-elements/_comments.module.pug

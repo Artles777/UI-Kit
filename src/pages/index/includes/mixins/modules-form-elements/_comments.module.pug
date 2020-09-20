@@ -1,0 +1,24 @@
+-
+    var commentsState = [
+        {
+            name: 'Мурад Сарафанов',
+            visit: '5 дней назад',
+            description: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\n' +
+                    'И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\n' +
+                    'не жаловался из соседей.',
+            srcName: 'comment.png',
+            state: 'active',
+            count: '12'
+        },
+    ]
+
+each listComments, index in commentsState
+    +Comments(
+            listComments.name,
+            listComments.visit,
+            listComments.description,
+            listComments.srcName,
+            listComments.state,
+            listComments.count,
+            index
+    )

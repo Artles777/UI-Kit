@@ -2,20 +2,17 @@
     var likeState = [
         {
             state: '',
-            type: 'checkbox',
-            text: '2'
+            count: '2'
         },
         {
             state: 'checked',
-            type: 'checkbox',
-            text: '12'
+            count: '12'
         }
     ]
 
 each listLike, index in likeState
     +LikeBtn(
         listLike.state,
-        listLike.type,
-        listLike.text,
+        listLike.count,
         index
     )

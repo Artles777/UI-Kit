@@ -1,0 +1,42 @@
+-
+    var ColorName = [
+        {
+            color:'1F2041',
+            title:'Dark Shade 100%',
+        },
+        {
+            color:'1F2041',
+            title:'Dark Shade 75%',
+        },
+        {
+            color:'1F2041',
+            title:'Dark Shade 50%',
+        },
+        {
+
+            color:'1F2041',
+            title:'Dark Shade 25%',
+        },
+        {
+
+            color:'1F2041',
+            title:'Dark Shade 5%',
+        },
+        {
+
+            color:'BC9CFF',
+            title:'Purple',
+        },
+        {
+
+            color:'6FCF97',
+            title:'Green',
+        },
+    ]
+
+each ListColor, index in ColorName
+    +ColorName(
+        ListColor.color,
+        ListColor.title,
+        index + 1
+    )

@@ -1,71 +1,11 @@
 include mixins/_colors
 include mixins/_type
 
--
-    var ColorName = [
-        {
-            color:'1F2041',
-            title:'Dark Shade 100%',
-        },
-        {
-            color:'1F2041',
-            title:'Dark Shade 75%',
-        },
-        {
-            color:'1F2041',
-            title:'Dark Shade 50%',
-        },
-        {
-
-            color:'1F2041',
-            title:'Dark Shade 25%',
-        },
-        {
-
-            color:'1F2041',
-            title:'Dark Shade 5%',
-        },
-        {
-
-            color:'BC9CFF',
-            title:'Purple',
-        },
-        {
-
-            color:'6FCF97',
-            title:'Green',
-        },
-    ];
-
-    var TypeName = [
-        {
-            tag:'H1',
-            text:`This one is the sub-section or
-    widget title`,
-            fontSize: '24px'
-        },
-        {
-            tag:'H2',
-            text:`Next one is the item title inside
-    widgets`,
-            fontSize: '19px'},
-        {
-            tag:'H3',
-            text:'This is a label or CTA text',
-            fontSize: '12px'
-        },
-        {
-            tag:'Body',
-            text:`This is the body text which is used for most
-    of the design, like paragraphs, lists, etc.`,
-            fontSize: '14px'
-        },
-    ];
-
 main.main: section.section: .container: .row
     .colors
-        each ListColor, index in ColorName
-            +ColorName(ListColor.color, ListColor.title, index + 1)
+        // This module contains a description of all the colors on the site
+        include mixins/modules-color-&-type/_color.module.pug
+
     .type
-        each ListType in TypeName
-            +TypeList(ListType.tag, ListType.text, ListType.fontSize)
+        // This module contains a description of all the fonts on the site
+        include mixins/modules-color-&-type/_type.module.pug
