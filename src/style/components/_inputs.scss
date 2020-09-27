@@ -55,7 +55,6 @@
     border-radius: 4px;
     display: flex;
     align-items: center;
-    padding-left: 15px;
     margin-top: 4px;
     position: relative;
 
@@ -70,6 +69,7 @@
     border: none;
     letter-spacing: -0.015em;
     width: 100%;
+    padding-left: 15px;
 
     &:active, &:focus {
       outline: none;
@@ -90,10 +90,40 @@
   &__dropdown {
 
     &_field {
+      @include size(100%);
+
       color: rgba(31, 32, 65, 0.75);
-      width: 100%;
+      display: flex;
+      align-items: center;
       font-size: 14px;
       cursor: pointer;
+      padding-left: 15px;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &_date {
+      color: rgba(31, 32, 65, 0.75);
+      width: 100%;
+      border: none;
+      letter-spacing: -0.04rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      padding-left: 15px;
+
+      &::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      &:focus {
+        outline: none;
+      }
     }
 
     &_icon {

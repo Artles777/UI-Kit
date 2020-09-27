@@ -1,5 +1,118 @@
 include mixins/_cards
 
 section.section
-    +Calendar
+    .container: .row
+        .cards
+            -
+                var selectionState = {
+                    title: 'Найдём номера под ваши пожелания',
+                    dateBtn: [
+                        {
+                            label: 'прибытие',
+                            state: '',
+                            text: 'ДД.ММ.ГГГГ',
+                            width: 'small'
+                        },
+                        {
+                            label: 'Выезд',
+                            state: '',
+                            text: 'ДД.ММ.ГГГГ',
+                            width: 'small'
+                        },
+                        {
+                            label: 'гости',
+                            state: '',
+                            text: 'Сколько гостей',
+                            width: 'large'
+                        }
+                    ],
+                    iconBtn: {
+                        context: 'подобрать номер',
+                        href: ''
+                    }
+                }
 
+            +Selection(
+                selectionState.title,
+                selectionState.dateBtn,
+                selectionState.iconBtn
+            )
+
+            -
+                var reservationState = {
+                    infoCard: {
+                        number: 888,
+                        type: 'люкс',
+                        price: 9990,
+                        term: 'в сутки'
+                    },
+                    dateBtn: [
+                        {
+                            label: 'прибытие',
+                            state: '',
+                            text: '19.08.2019',
+                            width: 'small'
+                        },
+                        {
+                            label: 'Выезд',
+                            state: '',
+                            text: '23.08.2019',
+                            width: 'small'
+                        },
+                        {
+                            label: 'гости',
+                            state: '',
+                            text: '3 гостя',
+                            width: 'large'
+                        }
+                    ],
+                    descriptionCard: {
+                        days: 4,
+                        sale: 2179,
+                        additional: 300,
+
+                    },
+                    iconBtn: {
+                        context: 'забронировать',
+                        href: ''
+                    }
+                }
+
+            +Reservation(
+                reservationState.infoCard,
+                reservationState.dateBtn,
+                reservationState.descriptionCard,
+                reservationState.iconBtn
+            )
+
+            -
+                var calendarState = {
+                    month: 'Август 2019',
+                    week: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+                    days: [
+                        29, 30, 31, 1, 2, 3, 4,
+                        5, 6, 7, 8, 9, 10, 11,
+                        12, 13, 14, 15, 16, 17, 18,
+                        19, 20, 21, 22, 23, 24, 25,
+                        26, 27, 28, 29, 30, 31, 1
+                    ],
+                    buttons: [
+                        {
+                            context: 'очистить',
+                            href: '',
+                            index: 1
+                        },
+                        {
+                            context: 'Применить',
+                            href: '',
+                            index: 0
+                        },
+                    ]
+                }
+
+            +Calendar(
+                calendarState.month,
+                calendarState.week,
+                calendarState.days,
+                calendarState.buttons
+            )

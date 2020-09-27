@@ -178,12 +178,17 @@
     @include font-theme(h3);
 
     color: #FFFFFF;
+
+    &:hover, &:focus {
+      color: #FFFFFF;
+    }
   }
 
   &__icon {
     position: absolute;
     right: 0.75rem;
     color: #FFFFFF;
+    padding-top: 3px;
   }
 }
 

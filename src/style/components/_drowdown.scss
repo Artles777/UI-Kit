@@ -27,10 +27,13 @@
       }
 
       &__list {
-        display: none;
+        display: grid;
+        grid-template: 38px 38px 37px/ 3fr 2fr;
+        grid-auto-rows: 40px;
         position: absolute;
-        margin-top: 65px;
-        width: inherit;
+        width: 100%;
+        box-sizing: content-box;
+        left: -1px;
 
         border-top: none !important;
         border-right: 1px solid rgba(31, 32, 65, 0.5);
@@ -120,11 +123,9 @@
   }
 }
 
-.text-field__expanded {
-
-  .text-field__list {
-    display: grid;
-    grid-template: 38px 38px 37px/ 3fr 2fr;
-    grid-auto-rows: 40px;
-  }
-}
+//.text-field__expanded {
+//
+//  .text-field__list {
+//
+//  }
+//}

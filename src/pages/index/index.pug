@@ -1,4 +1,5 @@
 extends _index
+include includes/custom
 
 block meta
     meta(charset='utf-8')
@@ -17,19 +18,20 @@ block title
 block colors & type
     .app-wrapper
         .emblem
-            img.emblem__img(src=require('../../img/Emblem.svg'))
+            +PasteImg('emblem__img', 'Emblem', 'Toxin')
         include includes/Colors & Type
 
 block form elements
     .app-wrapper
         .emblem
-            img.emblem__img(src=require('../../img/Emblem.svg'))
+            +PasteImg('emblem__img', 'Emblem', 'Toxin')
         include includes/Form elements
 
 block cards
-    //.emblem
-    //    img.emblem__img(src=require('../../img/Emblem.svg'))
-    //include includes/Cards
+    .app-wrapper
+        .emblem
+            +PasteImg('emblem__img', 'Emblem', 'Toxin')
+        include includes/Cards
 
 block headers & footers
     //.emblem

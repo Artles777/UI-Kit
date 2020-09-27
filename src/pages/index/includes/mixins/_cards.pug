@@ -1,30 +1,60 @@
-mixin Calendar()
-    .container: .row
-        .cards
-            .card.card
-                form.card__form
-                    h3.card__title Найдём номера под ваши пожелания
-                    .card__wrapper
-                        .card__columns
-                            label.card__label прибытие
-                            .card__wrapper_input
-                                input.card__date(placeholder='ДД.ММ.ГГГГ')
-                                span.card__icon.icon-down-open
-                        .card__columns
-                            label.card__label выезд
-                            .card__wrapper_input
-                                input.card__date(placeholder='ДД.ММ.ГГГГ')
-                                span.card__icon.icon-down-open
-                    .card__wrapper
-                        label.card__label гости
-                        .card__wrapper_input
-                            select.card__date
-                                option.card__date_namber(disabled, selected, hidden, value='guests') Сколько гостей
-                                - var n = 1
-                                while n < 6
-                                    option.card__date_namber= n++
-                            span.card__icon.icon-down-open
-                    .card__btn
-                        btn.card__btn_default подобрать номер
-                        span.card__btn_icon.icon-right
+include ../mixins/_inputs
+include ../mixins/_interact
 
+mixin Selection(title, dateBtn, iconBtn)
+    .selection
+        h1.selection__title #{title}
+        each listDateBtn in dateBtn
+            +SelectWithLabel(
+                listDateBtn.label,
+                listDateBtn.state,
+                listDateBtn.text,
+                listDateBtn.width
+            )
+        +ButtonWithIcon(iconBtn.context, iconBtn.href)
+
+mixin Reservation(infoCard, dateBtn, descriptionCard, iconBtn)
+    .reservation
+        div.reservation__number!= `№ <span class="reservation__number_price">${infoCard.number}</span>&nbsp&nbsp<span class="reservation__number_class">${infoCard.type}</span>`
+        div.reservation__pricing
+            span.reservation__pricing_value!= `<span class="reservation__value">${infoCard.price}</span>₽`
+            span.reservation__pricing_term #{infoCard.term}
+        each listDateBtn in dateBtn
+            +SelectWithLabel(
+                listDateBtn.label,
+                listDateBtn.state,
+                listDateBtn.text,
+                listDateBtn.width
+            )
+        div.reservation__description
+            span.reservation__description_text!= `<span class="reservation__value">${infoCard.price}</span>₽ х ${descriptionCard.days} суток`
+            span.reservation__description_value!= `<span class="reservation__value">${infoCard.price * descriptionCard.days}</span>₽`
+            span.reservation__description_text!= `Сбор за услуги: скидка <span class="reservation__value">${descriptionCard.sale}</span>₽`
+            span.reservation__description_value 0₽
+            span.reservation__description_text!= 'Сбор за дополнительные\nуслуги'
+            span.reservation__description_value!= `<span class="reservation__value">${descriptionCard.additional}</span>₽`
+        div.reservation__result
+            span.reservation__result_context Итого
+            span.reservation__result_price!= `<span class="reservation__value">${(infoCard.price * descriptionCard.days) - descriptionCard.sale + descriptionCard.additional}</span>₽`
+        +ButtonWithIcon(iconBtn.context, iconBtn.href)
+
+mixin Calendar(month, week, days, buttons)
+    .calendar
+        .calendar__wrapper.calendar__wrapper_month
+            h2.calendar__month #{month}
+        .calendar__wrapper.calendar__wrapper_week
+            nav.calendar__week
+                each listWeek, index in week
+                    li.calendar__week_item(class=`calendar__week_item_${index}`) #{listWeek}
+        .calendar__wrapper.calendar__wrapper_days
+            ul.calendar__days
+                each listDays, index in days
+                    li.calendar__days_item(class=`calendar__days_item_${index}`) #{listDays}
+        .calendar__wrapper.calendar__wrapper_btn
+            each listButtons in buttons
+                +ButtonLink(listButtons.context, listButtons.href, listButtons.index)
+
+mixin Registration()
+    .registration
+        h2.registration__title
+        +Input(placeholder, text, width)

@@ -5,32 +5,36 @@ mixin CounterContext(description)
     p.text-field__list_context #{description.text}
     span.text-field__counter(class=`text-field__counter_${description.counter}`) #{description.counter}
 
-mixin Dropdown(text, width, description)
-    +Select(text, width)
-    .text-field__list
-        each listDescription in description
-            +CounterContext(listDescription)
+mixin Dropdown(text, width, description, cond)
+    details.text-field__wrapper(class=`text-field__${width}` open=cond)
+        summary.text-field__dropdown_field= text
+            span.text-field__dropdown_icon.icon-down-open
+        .text-field__list
+            each listDescription in description
+                +CounterContext(listDescription)
 
-mixin DropdownBtn(text, width, description, buttons)
-    +Select(text, width)
-    .text-field__list
-        each listDescription in description
-            +CounterContext(listDescription)
-        each listButtons in buttons
-            +ButtonLink(listButtons.context, listButtons.href, listButtons.index)
+mixin DropdownBtn(text, width, description, buttons, cond)
+    details.text-field__wrapper(class=`text-field__${width}` open=cond)
+        summary.text-field__dropdown_field= text
+            span.text-field__dropdown_icon.icon-down-open
+        .text-field__list
+            each listDescription in description
+                +CounterContext(listDescription)
+            each listButtons in buttons
+                +ButtonLink(listButtons.context, listButtons.href, listButtons.index)
 
-mixin DropdownWithBtn(label, state, text, width, description, buttons)
-    .text-field(class=`text-field__${width} text-field__${state ? state : 'expanded'}`)
+mixin DropdownWithBtn(label, state, text, width, description, buttons, cond)
+    .text-field(class=`text-field__${width}` open=cond)
         label.text-field__label= label
         if state !== ''
             span.text-field__state= state
-        +DropdownBtn(text, width, description, buttons)
+        +DropdownBtn(text, width, description, buttons, state)
 
 
-mixin DropdownWithLabel(label, state, text, width, description)
-    .text-field(class=`text-field__${width} text-field__${state ? state : 'expanded'}`)
+mixin DropdownWithLabel(label, state, text, width, description, cond)
+    .text-field(class=`text-field__${width}` open=cond)
         label.text-field__label= label
         if state !== ''
             span.text-field__state= state
-        +Dropdown(text, width, description)
+        +Dropdown(text, width, description, state)
 

@@ -96,9 +96,13 @@ p {
 
   &:nth-child(2) {
     .section {
-      padding-top: 62px;
+      padding-top: 63px;
       padding-bottom: 113px;
     }
+  }
+
+  &:nth-child(3) {
+    background: #F4F4F6;
   }
 }
 

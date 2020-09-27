@@ -17,4 +17,11 @@ window.addEventListener('DOMContentLoaded', () => {
         '.pagination__page',
         'pagination__page_active'
     );
+
+    const cardPrice = document.querySelectorAll('.reservation__value');
+
+    cardPrice.forEach(item => {
+        let letter = `${item.textContent.substr(0, item.textContent.length -3)} ${item.textContent.substr(item.textContent.length - 3, item.textContent.length)}`
+        item.textContent = letter;
+    })
 });

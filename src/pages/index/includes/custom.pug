@@ -1,0 +1,4 @@
+mixin PasteImg(className, fileName, imgAlt)
+    picture
+        source(class=className srcset=require(`../../img/${fileName}.svg`))
+        img(class=className src=require(`../../img/${fileName}.jpg`) alt=imgAlt)
