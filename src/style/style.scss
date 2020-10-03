@@ -71,7 +71,6 @@ p {
 .header {
   margin-top: 148px;
   background: #FFFFFF;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 
   &:not(:first-of-type) {
     margin-top: 40px;
@@ -80,7 +79,6 @@ p {
 
 .footer {
   background: #FFFFFF;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   margin-top: 40px;
 
   &:last-of-type {
@@ -109,7 +107,6 @@ p {
 .section {
   padding-top: 67px;
   padding-bottom: 145px;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
 }
 
 .container {

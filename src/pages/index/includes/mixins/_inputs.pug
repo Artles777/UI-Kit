@@ -1,6 +1,14 @@
-mixin Input(placeholder, text, width)
+mixin InputText(placeholder, text, width)
     .text-field__wrapper(class=`text-field__${width}`)
-        input.text-field__input(placeholder=`${placeholder}` value=`${text}`)
+        input.text-field__input(placeholder=`${placeholder}` type='text' value=`${text}`)
+
+mixin InputPassword(placeholder, text, width)
+    .text-field__wrapper(class=`text-field__${width}`)
+        input.text-field__input(placeholder=`${placeholder}` type='password' value=`${text}`)
+
+mixin InputEmail(placeholder, text, width)
+    .text-field__wrapper(class=`text-field__${width}`)
+        input.text-field__input(placeholder=`${placeholder}` type='email' value=`${text}`)
 
 mixin Select(text, width)
     details.text-field__wrapper(class=`text-field__${width}`)
@@ -8,21 +16,26 @@ mixin Select(text, width)
             span.text-field__dropdown_icon.icon-down-open
 
 mixin Date(text, width)
-    .text-field__wrapper(class = `text-field__small`)
+    .text-field__wrapper(class = `text-field__${width}`)
         input.text-field__dropdown_date(type='date' value=text)
         span.text-field__dropdown_icon.icon-down-open
 
 mixin Subscription(placeholder, text, width)
     .text-field__wrapper(class=`text-field__${width}`)
-        input.text-field__input(placeholder=`${placeholder}`)
+        input.text-field__input(placeholder=`${placeholder}` type='email')
         span.text-field__btn.icon-right
 
-mixin InputWithLabel(label, state, placeholder, text, width)
+mixin InputWithLabel(label, state, placeholder, text, width, type)
     .text-field(class=`text-field__${width}`)
         label.text-field__label= label
         if state !== ''
             span.text-field__state= state
-        +Input(placeholder, text, width)
+        if type === '' || type === 'text' || type === undefined
+            +InputText(placeholder, text, width)
+        if type === 'password'
+            +InputPassword(placeholder, text, width)
+        if type === 'email'
+            +InputEmail(placeholder, text, width)
 
 mixin SelectWithLabel(label, state, text, width)
     .text-field(class=`text-field__${width}`)

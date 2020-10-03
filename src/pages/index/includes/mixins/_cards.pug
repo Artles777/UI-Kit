@@ -1,5 +1,7 @@
 include ../mixins/_inputs
+include ../mixins/_buttons
 include ../mixins/_interact
+include ../custom
 
 mixin Selection(title, dateBtn, iconBtn)
     .selection
@@ -15,8 +17,8 @@ mixin Selection(title, dateBtn, iconBtn)
 
 mixin Reservation(infoCard, dateBtn, descriptionCard, iconBtn)
     .reservation
-        div.reservation__number!= `№ <span class="reservation__number_price">${infoCard.number}</span>&nbsp&nbsp<span class="reservation__number_class">${infoCard.type}</span>`
-        div.reservation__pricing
+        .reservation__number!= `№ <span class="reservation__number_price">${infoCard.number}</span>&nbsp&nbsp<span class="reservation__number_class">${infoCard.type}</span>`
+        .reservation__pricing
             span.reservation__pricing_value!= `<span class="reservation__value">${infoCard.price}</span>₽`
             span.reservation__pricing_term #{infoCard.term}
         each listDateBtn in dateBtn
@@ -26,15 +28,16 @@ mixin Reservation(infoCard, dateBtn, descriptionCard, iconBtn)
                 listDateBtn.text,
                 listDateBtn.width
             )
-        div.reservation__description
+        .reservation__description
             span.reservation__description_text!= `<span class="reservation__value">${infoCard.price}</span>₽ х ${descriptionCard.days} суток`
             span.reservation__description_value!= `<span class="reservation__value">${infoCard.price * descriptionCard.days}</span>₽`
             span.reservation__description_text!= `Сбор за услуги: скидка <span class="reservation__value">${descriptionCard.sale}</span>₽`
             span.reservation__description_value 0₽
             span.reservation__description_text!= 'Сбор за дополнительные\nуслуги'
             span.reservation__description_value!= `<span class="reservation__value">${descriptionCard.additional}</span>₽`
-        div.reservation__result
+        .reservation__result
             span.reservation__result_context Итого
+            i.reservation__result_spacer
             span.reservation__result_price!= `<span class="reservation__value">${(infoCard.price * descriptionCard.days) - descriptionCard.sale + descriptionCard.additional}</span>₽`
         +ButtonWithIcon(iconBtn.context, iconBtn.href)
 
@@ -54,7 +57,61 @@ mixin Calendar(month, week, days, buttons)
             each listButtons in buttons
                 +ButtonLink(listButtons.context, listButtons.href, listButtons.index)
 
-mixin Registration()
+mixin Registration(title, name, surname, gender, birthday, email, password, getOffer, btn, entering)
     .registration
-        h2.registration__title
-        +Input(placeholder, text, width)
+        p.registration__title #{title}
+        .registration__wrapper.registration__wrapper_name
+            +InputText(name.placeholder, name.text, name.width)
+        .registration__wrapper.registration__wrapper_surname
+            +InputText(surname.placeholder, surname.text, surname.width)
+        .registration__wrapper.registration__wrapper_gender
+            each listGender in gender
+                +RadioBtn(listGender.state, listGender.text, listGender.index)
+        .registration__wrapper.registration__wrapper_birthday
+            +InputWithLabel(birthday.label, birthday.state, birthday.placeholder, birthday.text, birthday.width, birthday.type)
+        .registration__wrapper.registration__wrapper_email
+            +InputWithLabel(email.label, email.state, email.placeholder, email.text, email.width, email.type)
+        .registration__wrapper.registration__wrapper_password
+            +InputPassword(password.placeholder, password.text, password.width)
+        .registration__wrapper.registration__wrapper_get-offer
+            +ToggleBtn(getOffer.state, getOffer.text, getOffer.index)
+        .registration__wrapper.registration__wrapper_btn
+            +ButtonWithIcon(btn.context, btn.href)
+        .registration__wrapper.registration__wrapper_entering
+            p.registration__description #{entering.description}
+            +ButtonClick(entering.context, entering.border, entering.state)
+
+mixin Login(title, email, password, btn, entering)
+    .login
+        p.login__title #{title}
+        .login__wrapper.login__wrapper_email
+            +InputText(email.placeholder, email.text, email.width)
+        .login__wrapper.login__wrapper_password
+            +InputPassword(password.placeholder, password.text, password.width)
+        .login__wrapper.login__wrapper_btn
+            +ButtonWithIcon(btn.context, btn.href)
+        .login__wrapper.login__wrapper_entering
+            p.login__description #{entering.description}
+            +ButtonClick(entering.context, entering.border, entering.state)
+
+mixin Card(image, infoCard, rate, comments)
+    .card
+        .card__visual(style=`background: url(../img/src/img/${image.name}.jpg) no-repeat`)
+            .card__visual_arrow.card__visual_arrow-left
+            .card__visual_arrow.card__visual_arrow-right
+            .card__visual_pagination
+                -var n = 0
+                while n < image.count
+                    span.card__visual_pagination-item(class=`card__visual_pagination-item_${n++}`)
+        .card__content
+            .card__content_number!= `№&nbsp&nbsp<span class="card__content_number-price">${infoCard.number}</span>&nbsp`
+                if infoCard.type
+                    span.card__content_number-class #{infoCard.type}
+            .card__content_pricing
+                span.card__content_pricing-value!= `<span class="reservation__value">${infoCard.price}</span>₽`
+                span.card__content_pricing-term #{infoCard.term}
+            .card__spacer
+            +RateBtn(rate.state, rate.id, rate.count)
+            .card__content_comments
+                span.card__content_comments-value #{comments.value}
+                span.card__content_comments-term #{comments.text}
