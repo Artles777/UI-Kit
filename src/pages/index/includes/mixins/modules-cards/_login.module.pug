@@ -1,0 +1,32 @@
+-
+    var loginState = {
+                title: 'Войти',
+                email: {
+                    placeholder: 'Email',
+                    text: '',
+                    width: 'large',
+                },
+                password: {
+                    placeholder: 'Пароль',
+                    text: '',
+                    width: 'large',
+                },
+                btn: {
+                    context: 'Войти',
+                    href: '',
+                },
+                entering: {
+                    description: 'Нет аккаунта на Toxin?',
+                    context: 'создать',
+                    border: 'border',
+                    state: 'active',
+                }
+            }
+
++Login(
+        loginState.title,
+        loginState.email,
+        loginState.password,
+        loginState.btn,
+        loginState.entering
+)

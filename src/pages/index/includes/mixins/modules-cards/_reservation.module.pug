@@ -1,0 +1,46 @@
+-
+    var reservationState = {
+                infoCard: {
+                    number: 888,
+                    type: 'люкс',
+                    price: 9990,
+                    term: 'в сутки'
+                },
+                dateBtn: [
+                    {
+                        label: 'прибытие',
+                        state: '',
+                        text: '19.08.2019',
+                        width: 'small'
+                    },
+                    {
+                        label: 'Выезд',
+                        state: '',
+                        text: '23.08.2019',
+                        width: 'small'
+                    },
+                    {
+                        label: 'гости',
+                        state: '',
+                        text: '3 гостя',
+                        width: 'large'
+                    }
+                ],
+                descriptionCard: {
+                    days: 4,
+                    sale: 2179,
+                    additional: 300,
+
+                },
+                iconBtn: {
+                    context: 'забронировать',
+                    href: ''
+                }
+            }
+
++Reservation(
+        reservationState.infoCard,
+        reservationState.dateBtn,
+        reservationState.descriptionCard,
+        reservationState.iconBtn
+)

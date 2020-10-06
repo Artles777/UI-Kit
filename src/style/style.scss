@@ -68,13 +68,8 @@ p {
   }
 }
 
-.header {
-  margin-top: 148px;
+.container-fluid {
   background: #FFFFFF;
-
-  &:not(:first-of-type) {
-    margin-top: 40px;
-  }
 }
 
 .footer {
@@ -100,6 +95,10 @@ p {
   }
 
   &:nth-child(3) {
+    background: #F4F4F6;
+  }
+
+  &:nth-child(4) {
     background: #F4F4F6;
   }
 }

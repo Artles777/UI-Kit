@@ -1,0 +1,34 @@
+-
+    var selectionState = {
+                title: 'Найдём номера под ваши пожелания',
+                dateBtn: [
+                    {
+                        label: 'прибытие',
+                        state: '',
+                        text: 'ДД.ММ.ГГГГ',
+                        width: 'small'
+                    },
+                    {
+                        label: 'Выезд',
+                        state: '',
+                        text: 'ДД.ММ.ГГГГ',
+                        width: 'small'
+                    },
+                    {
+                        label: 'гости',
+                        state: '',
+                        text: 'Сколько гостей',
+                        width: 'large'
+                    }
+                ],
+                iconBtn: {
+                    context: 'подобрать номер',
+                    href: ''
+                }
+            }
+
++Selection(
+        selectionState.title,
+        selectionState.dateBtn,
+        selectionState.iconBtn
+)

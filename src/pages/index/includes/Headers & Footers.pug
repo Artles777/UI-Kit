@@ -1,14 +1,36 @@
 include mixins/_header
 include mixins/_footer
 
-header.header
-    +StandardNavBar()
+section.section
+    .container-fluid
+        .container: .row
+            -
+                var headerStandardState = {
+                    imgName: 'Logo',
+                    links: [
+                        'Home',
+                        'About Us',
+                        'Services',
+                        'Careers',
+                        'News',
+                        'Documentation'
+                    ],
+                    btn: [
+                        {
+                            context: 'login',
+                            border: 'border',
+                            state: 'active',
+                        },
+                        {
+                            context: 'register',
+                            border: '',
+                            state: 'active',
+                        },
+                    ]
+                }
 
-header.header
-    +StandardNavBar('Cosmin Negoita')
-
-footer.footer
-    +FooterAndCopybar('Copyright © 2018 Toxin UI Kit. All rights reserved.')
-
-footer.footer
-    +FooterAndCopybar()
+            +HeaderStandard(
+                headerStandardState.imgName,
+                headerStandardState.links,
+                headerStandardState.btn
+            )

@@ -12,8 +12,8 @@ import cardPrice from "./modules/cardPrice";
 window.addEventListener('DOMContentLoaded', () => {
     searchRate('rate_1_1');
     searchRate('rate_2_0');
-    searchRate('rate_3_1');
-    searchRate('rate_4_0');
+    searchRate('rate_3_0');
+    searchRate('rate_4_1');
     borderActive('.text-field__input');
     pagination(
         '.pagination__wrapper',

@@ -1,0 +1,74 @@
+-
+    var registrationState = {
+                title: 'Регистрация аккаунта',
+                name: {
+                    placeholder: 'Имя',
+                    text: '',
+                    width: 'large'
+                },
+                surname: {
+                    placeholder: 'Фамилия',
+                    text: '',
+                    width: 'large'
+                },
+                gender: [
+                    {
+                        state: 'checked',
+                        text: 'Мужчина',
+                        index: 1
+                    },
+                    {
+                        state: '',
+                        text: 'Женщина',
+                        index: 2
+                    }
+                ],
+                birthday: {
+                    label: 'Дата рождения',
+                    state: '',
+                    placeholder: 'ДД.ММ.ГГГГ',
+                    text: '',
+                    width: 'large'
+                },
+                email: {
+                    label: 'Данные для входа в сервис',
+                    state: '',
+                    placeholder: 'Email',
+                    text: '',
+                    width: 'large',
+                    type: 'email'
+                },
+                password: {
+                    placeholder: 'Пароль',
+                    text: '',
+                    width: 'large',
+                },
+                getOffer: {
+                    state: '',
+                    text: 'Получать спецпредложения',
+                    index: 3,
+                },
+                btn: {
+                    context: 'перейти к оплате',
+                    href: '',
+                },
+                entering: {
+                    description: 'Уже есть аккаунт на Toxin',
+                    context: 'войти',
+                    border: 'border',
+                    state: 'active',
+                }
+            }
+
++Registration(
+        registrationState.title,
+        registrationState.name,
+        registrationState.surname,
+        registrationState.gender,
+        registrationState.birthday,
+        registrationState.email,
+        registrationState.password,
+        registrationState.getOffer,
+        registrationState.btn,
+        registrationState.entering
+)

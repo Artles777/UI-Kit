@@ -347,7 +347,7 @@
 
         &:after {
           @include color-theme(liner-purple);
-          @include size(40vh, 40px);
+          @include size(160px, 40px);
 
           opacity: 0.25;
           content: '';
@@ -519,26 +519,51 @@
 
   &:last-of-type {
     grid-area: card-2;
+    margin-top: -4px;
   }
 
 
   &__visual {
-    height: 36vh;
-    grid-area: img;
+    height: 9.6rem;
+    display: grid;
+    grid-template: 1fr 0.3fr / 1fr 1fr;
+    align-items: center;
 
     &_arrow {
+      font-family: "Material Icons";
+      font-size: 24px;
+      color: #FFFFFF;
 
       &-left {
-
+        margin-left: 10px;
+        margin-top: 2.2rem;
       }
 
       &-right {
-
+        justify-self: end;
+        margin-right: 10px;
+        margin-top: 2.2rem;
       }
     }
 
-    &_pagination-item {
+    &_pagination {
+      display: flex;
+      grid-column-start: 2;
+      grid-row-start: 2;
+      justify-self: end;
+      margin-right: 11px;
 
+      &-item {
+        @include size(7.5px);
+
+        border: 1px solid #FFFFFF;
+        border-radius: 50vh;
+        margin-right: 4px;
+
+        &:first-of-type {
+          background: #FFFFFF;
+        }
+      }
     }
   }
 
@@ -558,7 +583,7 @@
       @include font-theme(h3);
       @include color-theme(dark-50, color);
 
-      grid-area: num;
+      font-weight: 400;
 
       &-price {
         @include font-theme(h3);

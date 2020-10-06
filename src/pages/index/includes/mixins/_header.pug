@@ -1,31 +1,12 @@
-mixin Menu(...items)
-    ul.navbar__menu
-        each list, index in items.length ? items : ['Home','About Us', 'Services', 'Careers', 'News', 'Documentation']
-            if index === 0
-                li.navbar__item
-                    a.navbar__link(href=`/${list}`, class="active")= list
-            else if index === 2
-                li.navbar__item
-                    a.navbar__link(href=`/${list}`)= list
-                    span.icon-down-open(style={
-                        })
-            else
-                li.navbar__item
-                    a.navbar__link(href=`/${list}`)= list
+include ../mixins/_interact
 
-mixin StandardNavBar(surname, ...items)
-    .container: .row
-        .menu
-            .logo
-                img.logo__img(src=require('../../img/Logo.svg'))
-            .navbar
-                +Menu(...items)
-            if surname
-                .navbar__authorized
-                    span.navbar__authorized__spacer
-                    p.navbar__authorized__name= `${surname}`
-            else
-                .navbar__btn
-                    btn.navbar__btn.navbar__btn__login LOGIN
-                    btn.navbar__btn.navbar__btn__register REGISTER
-
+mixin HeaderStandard(imgName, links, btn)
+    header.header
+        .header__logo
+            img.logo__img(src=require(`../../img/${imgName}.svg`))
+        nav.header__navbar
+            each listLink in links
+                a.header__navbar_item #{listLink}
+        .header__btn
+            each listBtn in btn
+                +ButtonClick(listBtn.context, listBtn.border, listBtn.state)

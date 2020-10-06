@@ -97,8 +97,9 @@ mixin Login(title, email, password, btn, entering)
 mixin Card(image, infoCard, rate, comments)
     .card
         .card__visual(style=`background: url(../img/src/img/${image.name}.jpg) no-repeat`)
-            .card__visual_arrow.card__visual_arrow-left
-            .card__visual_arrow.card__visual_arrow-right
+            if infoCard.type
+                .card__visual_arrow.card__visual_arrow-left chevron_left
+                .card__visual_arrow.card__visual_arrow-right chevron_right
             .card__visual_pagination
                 -var n = 0
                 while n < image.count
