@@ -70,6 +70,10 @@ p {
 
 .container-fluid {
   background: #FFFFFF;
+
+  &:nth-child(2) {
+    margin-top: 40px;
+  }
 }
 
 .footer {
@@ -89,7 +93,7 @@ p {
 
   &:nth-child(2) {
     .section {
-      padding-top: 63px;
+      padding-top: 64px;
       padding-bottom: 113px;
     }
   }
@@ -104,7 +108,7 @@ p {
 }
 
 .section {
-  padding-top: 67px;
+  padding-top: 68px;
   padding-bottom: 145px;
 }
 
@@ -126,7 +130,7 @@ p {
 }
 
 .emblem {
-  padding: 30px 0 0 30px;
+  padding: 29px 0 0 30px;
 
   &__img {
 

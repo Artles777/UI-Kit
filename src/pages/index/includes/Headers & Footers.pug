@@ -7,14 +7,17 @@ section.section
             -
                 var headerStandardState = {
                     imgName: 'Logo',
-                    links: [
-                        'Home',
-                        'About Us',
-                        'Services',
-                        'Careers',
-                        'News',
-                        'Documentation'
-                    ],
+                    links: {
+                        href: '',
+                        list: [
+                            'Home',
+                            'About Us',
+                            'Services',
+                            'Careers',
+                            'News',
+                            'Documentation',
+                        ],
+                    },
                     btn: [
                         {
                             context: 'login',
@@ -33,4 +36,32 @@ section.section
                 headerStandardState.imgName,
                 headerStandardState.links,
                 headerStandardState.btn
+            )
+
+    .container-fluid
+        .container: .row
+            -
+                var headerLoggedState = {
+                            imgName: 'Logo',
+                            links: {
+                                href: '',
+                                list: [
+                                    'Home',
+                                    'About Us',
+                                    'Services',
+                                    'Careers',
+                                    'News',
+                                    'Documentation',
+                                ],
+                            },
+                            log: {
+                                name: 'Cosmin',
+                                surname: 'Negoita'
+                            }
+                        }
+
+            +HeaderLogged(
+                    headerLoggedState.imgName,
+                    headerLoggedState.links,
+                    headerLoggedState.log
             )

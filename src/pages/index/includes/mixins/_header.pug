@@ -5,8 +5,19 @@ mixin HeaderStandard(imgName, links, btn)
         .header__logo
             img.logo__img(src=require(`../../img/${imgName}.svg`))
         nav.header__navbar
-            each listLink in links
-                a.header__navbar_item #{listLink}
+            each listLink in links.list
+                a.header__navbar_item(href=`${links.href ? href : '#'}`) #{listLink}
         .header__btn
             each listBtn in btn
                 +ButtonClick(listBtn.context, listBtn.border, listBtn.state)
+
+mixin HeaderLogged(imgName, links, log)
+    header.header
+        .header__logo
+            img.logo__img(src=require(`../../img/${imgName}.svg`))
+        nav.header__navbar
+            each listLink in links.list
+                a.header__navbar_item(href=`${links.href ? href : '#'}`) #{listLink}
+        a.header__logged
+            span.header__logged_name #{log.name}
+            span.header__logged_surname #{log.surname}

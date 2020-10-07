@@ -9,7 +9,7 @@
     'logo nav btn';
   align-items: center;
   grid-template-rows: 34px;
-  grid-template-columns: 0.755fr 1fr 0.42fr;
+  grid-template-columns: 0.755fr 1fr 0.43fr;
   padding: 18px 0;
   margin: 0 20px;
   background: #FFFFFF;
@@ -26,7 +26,13 @@
     justify-content: space-between;
 
     &_item {
-      letter-spacing: 0.02rem;
+      @include color-theme(dark-50, color);
+
+      &:first-of-type {
+        @include font-theme(body);
+
+        font-weight: 600;
+      }
 
       &:nth-child(3) {
         position: relative;
@@ -55,6 +61,45 @@
     & > button {
       padding: 10px 20px;
       margin-left: 14px;
+    }
+  }
+
+  &__logged {
+
+    & > span {
+      @include color-theme(dark-50, color);
+    }
+
+    grid-area: btn;
+    justify-self: end;
+
+    &:before {
+      content: '';
+      border-left: 1px solid rgba(31, 32, 65, 0.1);
+      padding: 5px 0;
+      margin-right: 30px;
+    }
+
+    &_name {
+
+    }
+
+    &_surname {
+      margin-left: 5px;
+    }
+  }
+}
+
+.container-fluid {
+
+  &:nth-child(2) {
+
+    .header {
+      grid-template-columns: 0.755fr 1fr 0.31fr;
+
+      & > nav {
+        margin-left: 1.8rem;
+      }
     }
   }
 }
