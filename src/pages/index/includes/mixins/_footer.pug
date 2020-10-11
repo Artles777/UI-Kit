@@ -1,3 +1,5 @@
+include _inputs
+
 mixin List(...items)
     .navigation
         ul.verticalBar
@@ -70,3 +72,45 @@ mixin FooterAndCopybar(copyText, ...icon)
                     each listItem in icon.length ? icon : ['icon-twitter', 'icon-facebook-squared', 'icon-instagram']
                         span.socialIcon__item(style={'padding-left': '5px', 'padding-right': '5px'})
                             a.socialIcon__link(href={}, style={'letter-spacing':'0em'}, class=`${listItem}`)
+
+
+mixin FooterWidgets(logo, links, subscribe, icons)
+    footer.footer-widgets
+        .container: .row
+            .footer-widgets__logo
+                img.footer-widgets__logo_img(src=require(`../../img/${logo.imgName}.svg`))
+                p.footer-widgets__logo_text #{logo.text}
+            each listNav in links
+                h3.footer-widgets__navbar
+                    span.footer-widgets__navbar_title #{listNav.title}
+                    each listLink in listNav.items
+                        a.footer-widgets__navbar_item(href=`${links.href ? href : '#'}`) #{listLink}
+            .footer-widgets__subscribe
+                h3.footer-widgets__subscribe_title #{subscribe.title}
+                p.footer-widgets__subscribe_subtitle #{subscribe.subtitle}
+                +Subscription(subscribe.placeholder, subscribe.text, subscribe.width)
+    +CopyrightBar(icons.text, icons.items)
+
+mixin CopyrightBar(text, items)
+    .copyright
+        .container: .row
+            p.copyright__text #{text}
+            nav.copyright__icons
+                each listIcon in items
+                    a.copyright__icons_item(
+                        href=`${listIcon.href ? href : '#'}`,
+                        class=`${listIcon.item}`
+                    )
+
+mixin FooterCreative(logo, icons)
+    footer.footer-creative
+        .container: .row
+            .footer-creative__logo
+                img.footer-creative__logo_img(src=require(`../../img/${logo.imgName}.svg`))
+                p.footer-creative__logo_text #{logo.text}
+            nav.copyright__icons
+                each listIcon in icons
+                    a.copyright__icons_item(
+                        href=`${listIcon.href ? href : '#'}`,
+                        class=`${listIcon.item}`
+                    )

@@ -1,0 +1,70 @@
+-
+    var footerWidgetsState = {
+                logo: {
+                    imgName: 'Logo',
+                    text: 'Lorem ipsum dolor sit amet\n' +
+                            'consectetur adipiscing elit aliquam\n' +
+                            'eget nullam pellentesque aliquam\n' +
+                            'curabitur cociis.'
+                },
+                links: [
+                    {
+                        title: 'Navigation',
+                        items: [
+                            'About Us',
+                            'News',
+                            'Support',
+                            'Products'
+                        ]
+                    },
+                    {
+                        title: 'About Us',
+                        items: [
+                            'Who we are',
+                            'Our team',
+                            'Careers',
+                            'Investors'
+                        ]
+                    },
+                    {
+                        title: 'Support',
+                        items: [
+                            'Documentation',
+                            'Community',
+                            'Get in Touch'
+                        ]
+                    },
+                ],
+                subscribe: {
+                    title: 'Subscribe to our newsletter',
+                    subtitle: 'Receive our latest news and \n' +
+                            'promotions in your inbox!',
+                    placeholder: 'Your email address',
+                    text: '',
+                    width: 'none'
+                },
+                icons: {
+                    text: 'Copyright © 2018 Toxin UI Kit. All rights reserved.',
+                    items: [
+                        {
+                            href: '',
+                            item: 'icon-twitter',
+                        },
+                        {
+                            href: '',
+                            item: 'icon-facebook-squared',
+                        },
+                        {
+                            href: '',
+                            item: 'icon-instagram',
+                        },
+                    ]
+                }
+            }
+
++FooterWidgets(
+        footerWidgetsState.logo,
+        footerWidgetsState.links,
+        footerWidgetsState.subscribe,
+        footerWidgetsState.icons
+)

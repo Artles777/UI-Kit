@@ -3,7 +3,7 @@ include ../mixins/_interact
 mixin HeaderStandard(imgName, links, btn)
     header.header
         .header__logo
-            img.logo__img(src=require(`../../img/${imgName}.svg`))
+            img.header__logo_img(src=require(`../../img/${imgName}.svg`))
         nav.header__navbar
             each listLink in links.list
                 a.header__navbar_item(href=`${links.href ? href : '#'}`) #{listLink}

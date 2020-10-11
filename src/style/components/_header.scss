@@ -15,8 +15,11 @@
   background: #FFFFFF;
 
   &__logo {
-
     grid-area: logo;
+
+    &_img {
+
+    }
   }
 
   &__navbar {

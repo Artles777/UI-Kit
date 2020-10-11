@@ -9,9 +9,9 @@ mixin Range(label, state)
 
 mixin ButtonClick(context, border, state)
     if (border === '')
-        button.buttons-click__btn(class=`buttons-click__btn_${state}`)= context
+        button.buttons-click__btn(class=`buttons-click__btn_${state}` type="submit")= context
     else if (border === 'border')
-        button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}`)= context
+        button.buttons-click__btn(class=`buttons-click__btn_${state} buttons-click__btn_${border}` type="submit")= context
 
 mixin ButtonLink(context, href, index)
     a.buttons-link__link(class=`buttons-link__link_${index}` href=`${href ? href : '#'}`)= context
@@ -19,7 +19,7 @@ mixin ButtonLink(context, href, index)
 mixin ButtonWithIcon(context, href)
     .buttons-icon__wrapper
         a.buttons-icon__link(href=`${href ? href : '#'}`) #{context}
-        i.buttons-icon__icon.icon-right
+        input.buttons-icon__icon.material-icons(type="submit" value="arrow_forward")
 
 mixin PaginationPage(context, href, index)
     li.pagination__page(class=`pagination__page_${index}`)

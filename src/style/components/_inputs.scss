@@ -82,9 +82,14 @@
 
   &__btn {
     @include color-theme(liner-purple, color);
-    
-    font-size: 18px;
+
+    font-size: 24px;
     margin-right: 0.5rem;
+    border: none;
+
+    &:focus, &:active {
+      outline: none;
+    }
   }
 
   &__dropdown {
@@ -142,5 +147,9 @@
 
   &__small {
     @include width-inputs(small);
+  }
+
+  &__none {
+    width: 100%;
   }
 }

@@ -4,64 +4,14 @@ include mixins/_footer
 section.section
     .container-fluid
         .container: .row
-            -
-                var headerStandardState = {
-                    imgName: 'Logo',
-                    links: {
-                        href: '',
-                        list: [
-                            'Home',
-                            'About Us',
-                            'Services',
-                            'Careers',
-                            'News',
-                            'Documentation',
-                        ],
-                    },
-                    btn: [
-                        {
-                            context: 'login',
-                            border: 'border',
-                            state: 'active',
-                        },
-                        {
-                            context: 'register',
-                            border: '',
-                            state: 'active',
-                        },
-                    ]
-                }
-
-            +HeaderStandard(
-                headerStandardState.imgName,
-                headerStandardState.links,
-                headerStandardState.btn
-            )
+            include mixins/modules-headers-&-footers/_headerStandard.module.pug
 
     .container-fluid
         .container: .row
-            -
-                var headerLoggedState = {
-                            imgName: 'Logo',
-                            links: {
-                                href: '',
-                                list: [
-                                    'Home',
-                                    'About Us',
-                                    'Services',
-                                    'Careers',
-                                    'News',
-                                    'Documentation',
-                                ],
-                            },
-                            log: {
-                                name: 'Cosmin',
-                                surname: 'Negoita'
-                            }
-                        }
+            include mixins/modules-headers-&-footers/_headerLogged.module.pug
 
-            +HeaderLogged(
-                    headerLoggedState.imgName,
-                    headerLoggedState.links,
-                    headerLoggedState.log
-            )
+    .container-fluid
+        include mixins/modules-headers-&-footers/_footerWidgets.module.pug
+
+    .container-fluid
+        include mixins/modules-headers-&-footers/_footerCreative.module.pug

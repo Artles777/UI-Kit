@@ -54,12 +54,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Artles777/HotelRooms.git"
+    "url": "git+https://github.com/Artles777/UI-Kit.git"
   },
   "bugs": {
-    "url": "https://github.com/Artles777/HotelRooms/issues"
+    "url": "https://github.com/Artles777/UI-Kit.git"
   },
-  "homepage": "https://github.com/Artles777/HotelRooms#readme",
+  "homepage": "https://github.com/Artles777/UI-Kit#readme",
   "description": "UI Kit test project on position front-end developer",
   "keywords": [
     "UI",

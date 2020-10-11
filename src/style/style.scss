@@ -70,18 +70,11 @@ p {
 
 .container-fluid {
   background: #FFFFFF;
-
-  &:nth-child(2) {
-    margin-top: 40px;
-  }
-}
-
-.footer {
-  background: #FFFFFF;
-  margin-top: 40px;
+  margin-bottom: 40px;
+  filter: drop-shadow(0px 10px 20px rgba(31, 32, 65, 0.05));
 
   &:last-of-type {
-    margin-bottom: 130px;
+    margin-bottom: 0;
   }
 }
 
@@ -104,6 +97,12 @@ p {
 
   &:nth-child(4) {
     background: #F4F4F6;
+  }
+
+  &:last-child {
+    .section {
+      padding-bottom: 135px;
+    }
   }
 }
 

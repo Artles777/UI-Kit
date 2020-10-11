@@ -23,7 +23,7 @@ mixin Date(text, width)
 mixin Subscription(placeholder, text, width)
     .text-field__wrapper(class=`text-field__${width}`)
         input.text-field__input(placeholder=`${placeholder}` type='email')
-        span.text-field__btn.icon-right
+        input.text-field__btn.material-icons(type="submit" value="arrow_forward")
 
 mixin InputWithLabel(label, state, placeholder, text, width, type)
     .text-field(class=`text-field__${width}`)

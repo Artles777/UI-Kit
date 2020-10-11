@@ -1,0 +1,33 @@
+-
+    var headerStandardState = {
+                imgName: 'Logo',
+                links: {
+                    href: '',
+                    list: [
+                        'Home',
+                        'About Us',
+                        'Services',
+                        'Careers',
+                        'News',
+                        'Documentation',
+                    ],
+                },
+                btn: [
+                    {
+                        context: 'login',
+                        border: 'border',
+                        state: 'active',
+                    },
+                    {
+                        context: 'register',
+                        border: '',
+                        state: 'active',
+                    },
+                ]
+            }
+
++HeaderStandard(
+        headerStandardState.imgName,
+        headerStandardState.links,
+        headerStandardState.btn
+)
