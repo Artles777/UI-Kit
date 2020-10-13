@@ -1,4 +1,5 @@
-const isImg = () => process.env.NODE_ENV === 'development' ? 'img/[path][name].[ext]': 'img/[hash].[ext]';
+const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const isImg = () => process.env.NODE_ENV === 'development' ? 'img/[path][name].[ext]': 'img/[hash]-[name].[ext]';
 
 module.exports = () => {
     return {
@@ -9,11 +10,34 @@ module.exports = () => {
                     loader: 'file-loader',
                     options: {
                         name: isImg(),
-                        publicPath: '../',
+                        publicPath: './',
                         esModule: false
                     }
                 }
             ]
-        }
+        },
+        plugins: [
+            new ImageMinimizerPlugin({
+                minimizerOptions: {
+                    // Lossless optimization with custom option
+                    // Feel free to experiment with options for better result for you
+                    plugins: [
+                        ['gifsicle', { interlaced: true }],
+                        ['jpegtran', { progressive: true }],
+                        ['optipng', { optimizationLevel: 5 }],
+                        [
+                            'svgo',
+                            {
+                                plugins: [
+                                    {
+                                        removeViewBox: false,
+                                    },
+                                ],
+                            },
+                        ],
+                    ],
+                },
+            }),
+        ],
     }
 };

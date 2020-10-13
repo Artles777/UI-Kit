@@ -1,4 +1,6 @@
-const isFont = () => process.env.NODE_ENV === 'development' ? 'fonts/[path][name].[ext]': 'fonts/[hash].[ext]';
+const isFont = () => process.env.NODE_ENV === 'development'
+    ? '[path][name].[ext]'
+    : 'fonts/[name].[ext]?[hash]';
 
 module.exports = () => {
     return {
@@ -9,7 +11,7 @@ module.exports = () => {
                     loader: 'file-loader',
                     options: {
                         name: isFont(),
-                        publicPath: '../',
+                        publicPath: './',
                         esModule: false
                     }
                 }

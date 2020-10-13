@@ -16,7 +16,7 @@
       }
 
       &_text {
-        white-space: pre;
+        white-space: pre-line;
         line-height: 1.45rem;
         letter-spacing: -0.01rem;
       }
@@ -55,7 +55,7 @@
       }
 
       &_subtitle {
-        white-space: pre;
+        white-space: pre-line;
         padding: 20px 0;
         line-height: 1.45rem;
       }
@@ -78,7 +78,7 @@
       }
 
       &_text {
-        white-space: pre;
+        white-space: pre-line;
         margin-top: 20px;
       }
     }

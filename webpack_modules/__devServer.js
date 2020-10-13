@@ -3,7 +3,7 @@ const path = require('path'),
 
 function openPage() {
     const html = fs.readdirSync(path.resolve(__dirname, '../src/pages'), {withFileTypes: true})
-        .map(item => `${item.name}/${item.name}.html`);
+        .map(item => `./${item.name}.html`);
     return html;
 }
 
@@ -13,12 +13,12 @@ module.exports = () => {
           contentBase: path.resolve(__dirname, 'dist'),
           stats: 'errors-only',
           // historyApiFallback: true,
-          index: 'index/index.html',
+          index: 'index.html',
           hot: true,
           compress: true,
           open: true,
           port: 4000,
-          writeToDisk: true,
+          // writeToDisk: true,
           openPage: openPage()
       }
   }

@@ -79,7 +79,7 @@
 
       margin-bottom: 10px;
       margin-left: 30px;
-      white-space: pre;
+      white-space: pre-line;
     }
 
     & .checkbox__input {
@@ -128,7 +128,7 @@
   &__item {
     list-style: none;
     margin-bottom: 12px;
-    white-space: pre;
+    white-space: pre-line;
     line-height: 1.4rem;
     display: flex;
 

@@ -9,7 +9,7 @@ function pages() {
         .map(item =>
             new HtmlWebpackPlugin({
                 title: `${item.name}`,
-                filename: `${item.name}/${item.name}.html`,
+                filename: `${item.name}.html`,
                 template: path.resolve(__dirname, `../src/pages/${item.name}/${item.name}.pug`),
                 minify: isMinify(),
                 favicon: path.resolve(__dirname, '../src/assets/favicon.ico')

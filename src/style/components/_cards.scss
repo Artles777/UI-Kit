@@ -167,7 +167,7 @@
     line-height: 1.2rem;
 
     &_text {
-      white-space: pre;
+      white-space: pre-line;
       position: relative;
 
       &:nth-child(3):after {
@@ -533,6 +533,11 @@
     display: grid;
     grid-template: 1fr 0.3fr / 1fr 1fr;
     align-items: center;
+
+    &_img {
+      position: absolute;
+      z-index: -1;
+    }
 
     &_arrow {
       font-family: "Material Icons";

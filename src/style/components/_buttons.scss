@@ -83,7 +83,7 @@
   }
 
   &__content {
-    white-space: pre;
+    white-space: pre-line;
     line-height: 1.125rem;
   }
 }
@@ -101,15 +101,16 @@
 
     // original radio
 
-    & input[type='radio'] + label::after {
-      content: none;
-    }
-
     & input[type='radio']:checked + label::after {
       content: '';
     }
 
+    & input[type='radio'] + label::after {
+      content: none;
+    }
+
     & input[type='radio']:checked + label::before {
+      content: '';
       border: 1px solid #BC9CFF;
     }
 

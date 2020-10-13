@@ -96,7 +96,8 @@ mixin Login(title, email, password, btn, entering)
 
 mixin Card(image, infoCard, rate, comments)
     .card
-        .card__visual(style=`background: url(../img/src/img/${image.name}.jpg) no-repeat`)
+        .card__visual
+            img.card__visual_img(src=require(`../../img/${image.name}.jpg`) alt=image.name)
             if infoCard.type
                 .card__visual_arrow.card__visual_arrow-left chevron_left
                 .card__visual_arrow.card__visual_arrow-right chevron_right

@@ -9,11 +9,11 @@ mixin CheckboxBtn(state, text, index)
 
 mixin RadioBtn(state, text, index)
     .radio__item
-        if state
-            input.radio__input(type=`radio` id=`radio_${text}_${index}` name=`radio` checked)
+        if state === 'checked'
+            input.radio__input(type=`radio` id=`radio_${text}_${index}` name=`radio_${index}` checked)
             label.radio__content(for=`radio_${text}_${index}`)= text
         else
-            input.radio__input(type=`radio` id=`radio_${text}_${index}` name=`radio`)
+            input.radio__input(type=`radio` id=`radio_${text}_${index}` name=`radio_${index}`)
             label.radio__content(for=`radio_${text}_${index}`)= text
 
 mixin ToggleBtn(state, text, index)

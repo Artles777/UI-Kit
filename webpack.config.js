@@ -19,7 +19,7 @@ const HtmlPlugin = require('./webpack_modules/__htmlPlugin'),
 //It is flags for module.exports
 const isEnv = () => process.env.NODE_ENV === 'development' ? 'development' : 'production',
       isTool = () => process.env.NODE_ENV === 'development' ? 'eval-source-map' : 'hidden-source-map',
-      isOut = () => process.env.NODE_ENV === 'development' ? '[name].[hash].js' : '[name].bundle.js';
+      isOut = () => process.env.NODE_ENV === 'development' ? '[name].[hash].js' : '[name].[contenthash].js';
 
 //Minimization path for plugin the path
 const PATHS = {
@@ -42,7 +42,19 @@ module.exports = merge([
         output: {
             filename: isOut(),
             path: path.resolve(__dirname, 'dist')
-        }
+        },
+        optimization: {
+            runtimeChunk: 'single',
+            splitChunks: {
+                cacheGroups: {
+                    vendor: {
+                        test: /[\\/]node_modules[\\/]/,
+                        name: 'vendors',
+                        chunks: 'all',
+                    },
+                },
+            },
+        },
     },
     HtmlPlugin(),
     ExtractCss(),

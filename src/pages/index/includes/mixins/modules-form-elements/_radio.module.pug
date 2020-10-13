@@ -2,17 +2,19 @@
     var radioState = [
         {
             state: 'checked',
-            text: 'Мужчина'
+            text: 'Мужчина',
+            index: 1
         },
         {
             state: '',
-            text: 'Женщина'
+            text: 'Женщина',
+            index: 1
         }
     ]
 
-each listRadio, index in radioState
+each listRadio in radioState
     +RadioBtn(
         listRadio.state,
         listRadio.text,
-        index
+        listRadio.index
     )
