@@ -1,1 +1,1 @@
-URL site: hotel-rooms-uikit.firebaseapp.com
+URL site: http://hotel-rooms-uikit.firebaseapp.com
